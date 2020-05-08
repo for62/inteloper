@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.AreaDevisionMapper">
+    <select id="queryCitys" resultType="AreaDevision">
+		select distinct ma.cityCode,ma.cityName,'' as townCode,'' as townName,'' as countryCode,'' as countryName from m_areadivision ma
+	</select>
+    <select id="queryTownsByCityCode" resultType="AreaDevision" parameterType="java.util.Map">
+		select distinct ma.townCode,ma.townName,'' as cityCode,'' as cityName,'' as countryCode,'' as countryName from m_areadivision ma where ma.cityCode=#{cityCode}
+	</select>
+    <select id="queryCountrysByCityAndTownCode" resultType="AreaDevision" parameterType="java.util.Map">
+		select ma.countryCode,ma.countryName,'' as cityCode,'' as cityName,'' as townCode,'' as townName from m_areadivision ma where ma.cityCode=#{cityCode} and townCode=#{townCode}
+	</select>
+    <select id="getAreaDevision" resultType="AreaDevision" parameterType="java.util.Map">
+		select * from m_areadivision where cityCode=#{cityCode} and townCode=#{townCode} and countryCode=#{countryCode}
+	</select>
+    <select id="getAreaDevisionByCityAndTown" resultType="AreaDevision" parameterType="java.util.Map">
+		select * from m_areadivision where cityCode=#{cityCode} and townCode=#{townCode}
+	</select>
+</mapper>
