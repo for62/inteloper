@@ -1,6 +1,7 @@
 package com.oracle.intelagr.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Peasant {
     private Integer id;
@@ -66,11 +67,21 @@ public class Peasant {
     private Date surveyDate;
     //调查记事
     private String surveyMemo;
+    // 地形
+    private List<Contract> contractList;
 
     /**
      * default constructor
      */
     public Peasant() {
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
     }
 
     public Integer getId() {

@@ -64,32 +64,34 @@
 </div>
 <script type="text/javascript">
     function save() {
+        var role={roelCode:$("#roleCode").val(),functions:[]};
         var funIds = [];
         var nodes = $('#authTree').tree('getChecked');
         for (var i = 0; i < nodes.length; i++) {
             funIds.push(nodes[i].id);
+            role.functions.push({functionCode:nodes[i].id});
         }
         var roleCode = $("#roleCode").val();
         $("#saveBt").linkbutton("disable");
         $("#cancalBt").linkbutton("disable");
         showLoading();
-        $.ajax({
-            url: "${pageContext.request.contextPath}/role/saveRoleAuth",
-            data: {roleCode: roleCode, funIds: funIds},
-            type: "post",
-            success: function (e) {
-                hideLoading();
-                $("#saveBt").linkbutton("enable");
-                $("#cancalBt").linkbutton("enable");
-                if (200 == e.status) {
-                    $.messager.alert('提示', '操作成功。', 'info');
-                    closeDialog();
-                } else {
-                    $.messager.alert('错误', e.msg, 'error');
-                }
-            },
-            dataType: "json"
-        });
+        <%--$.ajax({--%>
+        <%--    url: "${pageContext.request.contextPath}/role/saveRoleAuth",--%>
+        <%--    data: {roleCode: roleCode, funIds: funIds},--%>
+        <%--    type: "post",--%>
+        <%--    success: function (e) {--%>
+        <%--        hideLoading();--%>
+        <%--        $("#saveBt").linkbutton("enable");--%>
+        <%--        $("#cancalBt").linkbutton("enable");--%>
+        <%--        if (200 == e.status) {--%>
+        <%--            $.messager.alert('提示', '操作成功。', 'info');--%>
+        <%--            closeDialog();--%>
+        <%--        } else {--%>
+        <%--            $.messager.alert('错误', e.msg, 'error');--%>
+        <%--        }--%>
+        <%--    },--%>
+        <%--    dataType: "json"--%>
+        <%--});--%>
         /* 	Public.ajaxGet('
 
 
@@ -105,6 +107,32 @@
 		}
 	});  */
     }
+
+    /*
+     * 通用post请求，返回json url:请求地址， params：传递的参数{...}， callback：请求成功回调
+     */
+    Public.ajaxPost = function (url, params, callback) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            data: params,
+            dataType: "json",
+            async: false,
+            success: function (data, status) {
+                callback(data);
+            },
+            error: function (err) {
+                /**
+                 parent.Public.tips({
+				type : 1,
+				content : '操作失败，请检查您的网络链接！'
+			});
+                 **/
+                $.messager.alert('错误', "操作失败，请检查您的网络链接！", 'error');
+            }
+        });
+    };
 
     function closeDialog() {
         $('#addDialog').dialog('close');

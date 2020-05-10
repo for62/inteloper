@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/tags/simple" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html style="width:100%;height:100%;overflow:hidden">
@@ -45,7 +46,7 @@
                 <tr>
                     <td class="table_common_td_label_style">证件类型：</td>
                     <td class="table_common_td_txt_style editableFalse">
-
+                        <s:select id="iDType" name="iDType" entityName="commondata" hasPleaseSelectOption="true" codeKey="IDType"></s:select>
                         <span class="span_common_mustinput_style">*</span>
                     </td>
                     <td class="table_common_td_label_style">证件号码：</td>
@@ -69,7 +70,7 @@
             <tr>
                 <td class="table_common_td_label_style">承包方类型：</td>
                 <td class="table_common_td_txt_style">
-
+                    <s:select id="contractorType" name="contractorType" entityName="commondata" hasPleaseSelectOption="true" codeKey="ContractorType" width="150"></s:select>
                 </td>
                 <td class="table_common_td_label_style">承包方：</td>
                 <td class="table_common_td_txt_style">

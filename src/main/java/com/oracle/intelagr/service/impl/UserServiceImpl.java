@@ -21,6 +21,7 @@ public class UserServiceImpl implements IUserService {
     UserMapper userMapper;
     @Autowired
     UserRoleMapper userRoleMapper;
+
     /**
      * 登录
      *
@@ -31,7 +32,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User login(User user) {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("userId", user.getUserID());
+        map.put("userID", user.getUserID());
         map.put("password", user.getPassword());
         List<User> list = userMapper.select(map);
         if (list.size() != 0) {
@@ -62,7 +63,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     @Transactional
-    public void save(User user,String[] role) {
+    public void save(User user, String[] role) {
         /**
          *插入用户基本信息
          */
@@ -70,12 +71,12 @@ public class UserServiceImpl implements IUserService {
         /**
          * 插入角色信息
          */
-        for(String r:role){
+        for (String r : role) {
             UserRole ur = new UserRole();
             ur.setUserID(user.getUserID());
             ur.setRoleCode(r);
             ur.setCreateDate(new Date());
-            ur.setCreateDate(new Date());
+            ur.setUpdateDate(new Date());
             ur.setCreateUserId(user.getUpdateUserId());
             ur.setUpdateUserId(user.getUpdateUserId());
             userRoleMapper.insert(ur);
@@ -84,6 +85,7 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * 修改用户回显
+     *
      * @param userID
      * @return
      */
@@ -92,8 +94,14 @@ public class UserServiceImpl implements IUserService {
         return userMapper.selectById(userID);
     }
 
+    @Override
+    public User selectByUserID(String userID) {
+        return userMapper.selectByUserId(userID);
+    }
+
     /**
      * 修改用户基本信息
+     *
      * @param user
      */
     @Override
@@ -103,7 +111,9 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void delete(String userID) {
-
+        User user = userMapper.selectByUserId(userID);
+        user.setDeleteFlag("Y");
+        userMapper.update(user);
     }
 
     @Override
@@ -113,12 +123,16 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void startUse(String userID) {
-
+        User user = userMapper.selectByUserId(userID);
+        user.setLoginStatus("01");
+        userMapper.update(user);
     }
 
     @Override
     public void endUse(String userID) {
-
+        User user = userMapper.selectByUserId(userID);
+        user.setLoginStatus("02");
+        userMapper.update(user);
     }
 
     /**

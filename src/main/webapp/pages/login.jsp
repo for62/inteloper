@@ -10,10 +10,21 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/form2js.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/json2.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.js"></script>
     <script type="text/javascript">
         if (window != top) {
             top.location.href = location.href;
         }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#loginSubmit").click(function () {
+                if ($("#userID").val() == null || $("#userID").val()=='' || $("#password").val()==null || $("#password").val()=='') {
+                    alert("请填写完整信息~");
+                    return false;
+                }
+            });
+        });
     </script>
     <style type="text/css">
         * {
@@ -108,7 +119,7 @@
                     <span><input name="password" id="password" type="password" class="text" placeholder="密码"/></span>
                 </li>
                 <li class="btnContain">
-                    <input type="submit" class="btn" value="登 陆"/>
+                    <input type="submit" id="loginSubmit" class="btn" value="登 陆"/>
                 </li>
             </ul>
         </form>
@@ -117,6 +128,7 @@
 </body>
 <script type="text/javascript">
     $(function () {
+
         $('#userName').focus();
 
         $('#userID').validatebox({
@@ -128,22 +140,22 @@
             missingMessage: "请输入密码！"
         });
 
-        if ($.cookie('userID') != null && $.cookie('userID') != '') {
-            $('#userID').val($.cookie('userID'));
-        }
+        // if ($.cookie('userID') != null && $.cookie('userID') != '') {
+        //     $('#userID').val($.cookie('userID'));
+        // }
 
     });
 
-    document.onkeydown = function (e) {
-        // 兼容FF和IE和Opera
-        var theEvent = e || window.event;
-        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
-        var activeElementId = document.activeElement.id;//当前处于焦点的元素的id
-        if (code == 13 && activeElementId == "password") {
-            onSubmit();//要触发的方法
-            return false;
-        }
-        return true;
-    }
+    // document.onkeydown = function (e) {
+    //     // 兼容FF和IE和Opera
+    //     var theEvent = e || window.event;
+    //     var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+    //     var activeElementId = document.activeElement.id;//当前处于焦点的元素的id
+    //     if (code == 13 && activeElementId == "password") {
+    //         onSubmit();//要触发的方法
+    //         return false;
+    //     }
+    //     return true;
+    // }
 </script>
 </html>

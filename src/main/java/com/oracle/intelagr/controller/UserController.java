@@ -11,10 +11,8 @@ import com.oracle.intelagr.service.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -23,7 +21,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
-@SessionAttributes("loginUser")
+@SessionAttributes(names={"userIDReset","loginUser"})
 public class UserController {
 
     @Autowired
@@ -41,9 +39,9 @@ public class UserController {
      */
     @RequestMapping("/list.do")
     public String userList(@RequestParam Map map, Map request, @RequestParam(value = "page", defaultValue = "1") Integer pageNum, @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
-
+        System.err.println(map+":"+pageNum+":"+pageSize);
         logger.debug("map:"+map);
-        PageInfo pageInfo = iUserService.queryForPage(map, pageNum, pageSize);
+        PageInfo<User> pageInfo = iUserService.queryForPage(map, pageNum, pageSize);
         request.put("pageModel", pageInfo);
         request.put("data", map);
         return "user/userList";
@@ -82,6 +80,17 @@ public class UserController {
     }
 
     /**
+     * 查看用户基本信息
+     * @return
+     */
+    @RequestMapping("detail.do")
+    public String detail(@RequestParam(value = "userID")String userID,Map map){
+        System.err.println(userID);
+        map.put("user",iUserService.selectByUserID(userID));
+        return "user/basicInfoEdit";
+    }
+
+    /**
      * 添加用户以及角色
      * @return
      */
@@ -106,8 +115,42 @@ public class UserController {
         return new JsonResult(false,"添加失败");
     }
 
+    /**
+     * 删除用户---逻辑删除
+     * @return
+     */
+    @RequestMapping("delete.do")
+    @Transactional
+    public String delete(@RequestParam(value = "userID")String userID,Map map){
+        iUserService.delete(userID);
+        return "redirect:/user/list.do";
+    }
+
+    /**
+     *  启用
+     * @return
+     */
+    @RequestMapping("startUse.do")
+    @Transactional
+    public String startUse(@RequestParam(value = "userID") String userID,Map map){
+        iUserService.startUse(userID);
+        return "redirect:/user/list.do";
+    }
+
+    /**
+     * 禁用
+     * @return
+     */
+    @RequestMapping("endUse.do")
+    @Transactional
+    public String endUse(@RequestParam(value = "userID")String userID,Map map){
+        iUserService.endUse(userID);
+        return "redirect:/user/list.do";
+    }
+
     @RequestMapping("/login.do")
     public String login(User user, Map<String, Object> map) {
+        logger.debug(user);
         User u = iUserService.login(user);
         if (u == null) {
             return "redirect:/pages/login.jsp";
@@ -140,4 +183,31 @@ public class UserController {
         }
         return new JsonResult(false,"修改失败");
     }
+
+    @RequestMapping("resetPwdInit.do")
+    public String resetPwdInit(@RequestParam(value = "userID") String userID,Map map){
+        map.put("userIDReset",userID);
+        return "user/updatePwd";
+    }
+
+    @RequestMapping("updatePwd.do")
+    @ResponseBody
+    @Transactional
+    public JsonResult resetPwdInit(@RequestBody Map map,Map request,HttpSession session){
+        User user = new User();
+        user.setUserID((String)session.getAttribute("userIDReset"));
+        user.setPassword((String)map.get("oldPwd"));
+        if(iUserService.login(user)!=null){ // 原密码匹配可以修改
+            /**
+             * 先删除后插入
+             */
+            User user1 = iUserService.selectByUserID((String)session.getAttribute("userIDReset"));
+            iUserService.delete((String)session.getAttribute("userIDReset"));
+            user1.setPassword((String)map.get("newPassword"));
+            iUserService.update(user1);
+            return new JsonResult(true);
+        }
+        return new JsonResult(false,"修改密码失败~");
+    }
+
 }

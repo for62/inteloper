@@ -75,12 +75,11 @@
             return false;
         }
         var a = $('#editUserFrom').toObject();
-        Public.ajaxPost('${pageContext.request.contextPath}/user/updatePwd', JSON.stringify(a), function (e) {
+        Public.ajaxPost('${pageContext.request.contextPath}/user/updatePwd.do', JSON.stringify(a), function (e) {
             if (200 == e.status) {
                 $("#oldPwd").textbox('setValue', "");
                 $("#password").textbox('setValue', "");
                 $("#newPassword").textbox('setValue', "");
-
                 $.messager.alert('警告', '操作成功', 'warning');
             } else {
                 $.messager.alert('错误', '操作失败:' + e.data.msg, 'error');

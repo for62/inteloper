@@ -27,8 +27,8 @@
             </if>
             and deleteFlag = 'N'
         </where>
---         limit #{index},#{pageSize}
     </select>
+
     <select id="count" resultType="int" parameterType="java.util.Map">
         select count(*) from m_role
         <where>

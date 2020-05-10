@@ -45,7 +45,7 @@ public class CommonInterceptor implements HandlerInterceptor {
             }
         }
 
-        if (session.getAttribute("user") == null) {
+        if (session.getAttribute("loginUser") == null) {
             response.sendRedirect(request.getContextPath() + "/pages/login.jsp");
             return false;
         }

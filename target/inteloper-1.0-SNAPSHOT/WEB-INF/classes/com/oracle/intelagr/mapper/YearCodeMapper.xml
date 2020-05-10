@@ -13,6 +13,7 @@
                 and yearCode = #{yearCode}
             </if>
         </where>
+        order by displayseq desc
     </select>
 
 </mapper>

@@ -24,4 +24,11 @@
     <delete id="deleteRoleCode" parameterType="java.lang.String">
 		delete from m_rolefunctionmap where roleCode = #{roleCode}
 	</delete>
+
+    <select id="selectFunctions" resultType="java.util.Map" parameterType="String">
+        select f.ModuleCode ModuleCode,f.ModuleName ModuleName,f.FunctionCode FunctionCode,f.FunctionName FunctionName,checked from m_function f
+        LEFT JOIN
+        (select functionCode checked from m_rolefunctionmap where rolecode='${roleCode}') f1
+        on f.FunctionCode=f1.checked
+    </select>
 </mapper>

@@ -57,6 +57,10 @@
         </if>
     </select>
 
+    <select id="selectByUserId" parameterType="String" resultType="user">
+        select * from m_user u where u.userID = #{userID} and u.deleteFlag = 'N'
+    </select>
+
     <select id="selectById" resultMap="userMapper" parameterType="java.lang.String">
 		select * from m_user u
 		left outer join m_userrolemap ur on u.UserID=ur.UserID
@@ -138,7 +142,7 @@
         where userID=#{userID}
     </update>
 
-    <select id="getFunctionsByUserId" parameterType="String" resultType="com.oracle.intelagr.entity.Function">
+    <select id="getFunctionsByUserId" parameterType="String" resultType="function">
 		select * from m_function
 		where m_function.FunctionCode in(
 		select FunctionCode from m_rolefunctionmap where RoleCode

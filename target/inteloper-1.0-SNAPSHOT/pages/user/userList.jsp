@@ -17,28 +17,23 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/ajaxfileupload.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.js"></script>
-    <script>
-        $(function () {
-            $(this).load("../list.do");
-        });
-    </script>
 </head>
 <body class="easyui-layout">
 <div region="center" border="false" style="padding:5px;">
     <fieldset id="queryBlock" class="fieldset_common_style">
-        <form id="userform" name="userform" method="post" action="${pageContext.request.contextPath}/user/list.do?flag=2">
+        <form id="userform" name="userform" method="post" action="${pageContext.request.contextPath}/user/list.do">
             <table class="table_common_style">
                 <tr>
                     <td class="table_common_td_label_query_style">用户名：</td>
                     <td class="table_common_td_txt_query_style">
                         <input name="userID" value="${data.userID }" class="easyui-textbox"
                                style="width:200px;height:25px;">
-                        <input type='hidden' id="pageTotal" name="pageTotal" value="${pageModel.total }"/>
-                        <input type="hidden" id="page" name="page" value="${pageModel.pageNum }">
+                        <input type='hidden' id="pageTotal" name="total" value="${pageModel.total }"/>
+                        <input type="hidden" id="page" name="pageNum" value="${pageModel.pageNum }">
                         <input type="hidden" id="pageSize" name="pageSize" value="${pageModel.pageSize }">
                     </td>
                     <td class="table_common_td_label_query_style">用户姓名：</td>
+                    <td class="table_common_td_txt_query_style">
                     <td class="table_common_td_txt_query_style">
                         <input name="userName" value="${data.userName }" class="easyui-textbox"
                                style="width:200px;height:25px">
@@ -150,7 +145,7 @@
             height: winHeight - queryBlockHeight - toolBlock - 45,
             pagination: true,
             rownumbers: true,
-            fitColumns: false,
+            fitColumns: true,
             //fit: true,
             pageList: [5, 10, 15],
             pagePosition: "top"
@@ -227,7 +222,7 @@
             height: 200,
             closed: false,
             cache: false,
-            href: '${pageContext.request.contextPath}/user/resetPwdInit?userID=' + id,
+            href: '${pageContext.request.contextPath}/user/resetPwdInit.do?userID=' + id,
             modal: true
         });
     }
@@ -243,14 +238,14 @@
             $.messager.alert('警告', '只能选择一个用户。', 'warning');
             return false;
         }
-        var id = rows[0].id;
+
         $('#addDialog').dialog({
             title: '查看用户信息',
             width: 550,
             height: 290,
             closed: false,
             cache: false,
-            href: '${pageContext.request.contextPath}/user/detail?id=' + id,
+            href: '${pageContext.request.contextPath}/user/detail.do?userID=' + rows[0].userID,
             modal: true
         });
     }
@@ -268,14 +263,14 @@
             $.messager.alert('警告', '管理员账号不能删。', 'warning');
             return false;
         }
-        var userID = rows[0].userId;
+        var id = rows[0].userId;
         $.messager.confirm("确认", "您确认删除选定的记录吗？", function (deleteAction) {
             if (deleteAction) {
                 showLoading();
                 $.ajax({
-                    url: "${pageContext.request.contextPath}/user/delete",
+                    url: "${pageContext.request.contextPath}/user/delete.do",
                     type: "post",
-                    data: {userID: userID},
+                    data: {userID: id},
                     success: function (e) {
                         if (200 == e.status) {
                             $.messager.alert('提示', '操作成功。', 'info');
@@ -307,7 +302,7 @@
         var id = rows[0].userId;
         showLoading();
         $.ajax({
-            url: "${pageContext.request.contextPath}/user/startUse",
+            url: "${pageContext.request.contextPath}/user/startUse.do",
             type: "post",
             data: {userID: id},
             success: function (e) {
@@ -340,7 +335,7 @@
 
         showLoading();
         $.ajax({
-            url: "${pageContext.request.contextPath}/user/endUse",
+            url: "${pageContext.request.contextPath}/user/endUse.do",
             type: "post",
             data: {userID: id},
             success: function (e) {

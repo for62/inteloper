@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/tags/simple" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html style="width:100%;height:100%;overflow:hidden">
@@ -48,22 +49,23 @@
                 <tr>
                     <td class="table_common_td_label_style">申请批次号：</td>
                     <td class="table_common_td_txt_style">
-                        PT20170521000003
+                        ${ptNumber}
                     </td>
                 </tr>
                 <tr>
                     <td class="table_common_td_label_style">年度：</td>
                     <td class="table_common_td_txt_style editableFalse">
 
+                        <s:select id="year" name="year" entityName="yearcode" hasPleaseSelectOption="true"></s:select>
 
-                        <select id="year" name="year" class="easyui-combobox" style="width:187px;height:25px"
-                                data-options="editable:false">
+<%--                        <select id="year" name="year" class="easyui-combobox" style="width:187px;height:25px"--%>
+<%--                                data-options="editable:false">--%>
 
-                            <option value="2015">2015年</option>
+<%--                            <option value="2015">2015年</option>--%>
 
-                            <option value="2014">2014年</option>
+<%--                            <option value="2014">2014年</option>--%>
 
-                        </select>
+<%--                        </select>--%>
 
                         <script type="text/javascript">
 
@@ -89,83 +91,83 @@
                     <td class="table_common_td_label_style">企业：</td>
                     <td class="table_common_td_txt_style editableFalse">
 
+                    <s:select id="companyCode" name="companyCode" entityName="company" width="280" hasPleaseSelectOption="true"></s:select>
+<%--                        <select id="companyCode" name="companyCode" class="easyui-combobox"--%>
+<%--                                style="width:187px;height:25px" data-options="editable:true">--%>
+<%--                            <option value="" selected>-=请选择=-</option>--%>
+<%--                            <option value="GS001">五常市长盛种业有限公司</option>--%>
 
-                        <select id="companyCode" name="companyCode" class="easyui-combobox"
-                                style="width:187px;height:25px" data-options="editable:true">
-                            <option value="" selected>-=请选择=-</option>
-                            <option value="GS001">五常市长盛种业有限公司</option>
+<%--                            <option value="GS002">五常市利元种业有限公司</option>--%>
 
-                            <option value="GS002">五常市利元种业有限公司</option>
+<%--                            <option value="GS003">五常市龙洋种子有限公司</option>--%>
 
-                            <option value="GS003">五常市龙洋种子有限公司</option>
+<%--                            <option value="GS004">黑龙江阳光种业有限公司</option>--%>
 
-                            <option value="GS004">黑龙江阳光种业有限公司</option>
+<%--                            <option value="GS005">五常市神农天源种子有限公司</option>--%>
 
-                            <option value="GS005">五常市神农天源种子有限公司</option>
+<%--                            <option value="GS006">五常市葵花阳光农业科技服务有限公司</option>--%>
 
-                            <option value="GS006">五常市葵花阳光农业科技服务有限公司</option>
+<%--                            <option value="GS007">东方粮仓种业科技发展有限公司</option>--%>
 
-                            <option value="GS007">东方粮仓种业科技发展有限公司</option>
+<%--                            <option value="GS008">五常沃科收种业有限责任公司</option>--%>
 
-                            <option value="GS008">五常沃科收种业有限责任公司</option>
+<%--                            <option value="GS009">五常市宏运种业有限公司</option>--%>
 
-                            <option value="GS009">五常市宏运种业有限公司</option>
+<%--                            <option value="GS010">五常市绿珠种业科技有限公司</option>--%>
 
-                            <option value="GS010">五常市绿珠种业科技有限公司</option>
+<%--                            <option value="GS011">黑龙江方圆农业有限责任公司</option>--%>
 
-                            <option value="GS011">黑龙江方圆农业有限责任公司</option>
+<%--                            <option value="GS012">五常市丰源农业科技创新有限责任公司</option>--%>
 
-                            <option value="GS012">五常市丰源农业科技创新有限责任公司</option>
+<%--                            <option value="GS013">哈尔滨盛世百年农业有限公司</option>--%>
 
-                            <option value="GS013">哈尔滨盛世百年农业有限公司</option>
+<%--                            <option value="GS100">五常市金福粮油有限公司</option>--%>
 
-                            <option value="GS100">五常市金福粮油有限公司</option>
+<%--                            <option value="GS101">五常市汤洪斌水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS101">五常市汤洪斌水稻种植农民专业合作社</option>
+<%--                            <option value="GS102">五常市农之坊水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS102">五常市农之坊水稻种植农民专业合作社</option>
+<%--                            <option value="GS103">五常市浩海水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS103">五常市浩海水稻种植农民专业合作社</option>
+<%--                            <option value="GS104">五常市首誉水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS104">五常市首誉水稻种植农民专业合作社</option>
+<%--                            <option value="GS105">五常市百谷香水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS105">五常市百谷香水稻种植农民专业合作社</option>
+<%--                            <option value="GS106">五常市雪国粮仓水稻种植专业合作社</option>--%>
 
-                            <option value="GS106">五常市雪国粮仓水稻种植专业合作社</option>
+<%--                            <option value="GS107">五常市明栎水稻种植专业合作社</option>--%>
 
-                            <option value="GS107">五常市明栎水稻种植专业合作社</option>
+<%--                            <option value="GS108">五常市永顺丰水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS108">五常市永顺丰水稻种植农民专业合作社</option>
+<%--                            <option value="GS109">五常市秋然稻香水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS109">五常市秋然稻香水稻种植农民专业合作社</option>
+<%--                            <option value="GS110">五常市千盈水稻种植专业合作社</option>--%>
 
-                            <option value="GS110">五常市千盈水稻种植专业合作社</option>
+<%--                            <option value="GS111">五常裕禾田水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS111">五常裕禾田水稻种植农民专业合作社</option>
+<%--                            <option value="GS112">五常市曾氏水稻种植专业合作社</option>--%>
 
-                            <option value="GS112">五常市曾氏水稻种植专业合作社</option>
+<%--                            <option value="GS113">五常市官仓稻场水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS113">五常市官仓稻场水稻种植农民专业合作社</option>
+<%--                            <option value="GS114">五常市海兴水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS114">五常市海兴水稻种植农民专业合作社</option>
+<%--                            <option value="GS115">五常市积养源水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS115">五常市积养源水稻种植农民专业合作社</option>
+<%--                            <option value="GS116">五常市那军水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS116">五常市那军水稻种植农民专业合作社</option>
+<%--                            <option value="GS117">五常市德双水稻种植专业合作社</option>--%>
 
-                            <option value="GS117">五常市德双水稻种植专业合作社</option>
+<%--                            <option value="GS118">五常市康基水稻种植专业合作社</option>--%>
 
-                            <option value="GS118">五常市康基水稻种植专业合作社</option>
+<%--                            <option value="GS119">双涛水稻种植合作社</option>--%>
 
-                            <option value="GS119">双涛水稻种植合作社</option>
+<%--                            <option value="GS120">五常市小稻夫水稻种植农民专业合作社</option>--%>
 
-                            <option value="GS120">五常市小稻夫水稻种植农民专业合作社</option>
+<%--                            <option value="GS121">五常市郑文波水稻种植专业合作社</option>--%>
 
-                            <option value="GS121">五常市郑文波水稻种植专业合作社</option>
+<%--                            <option value="GS122">文龙水稻种植专业合作社</option>--%>
 
-                            <option value="GS122">文龙水稻种植专业合作社</option>
-
-                        </select>
+<%--                        </select>--%>
 
                         <input type="hidden" id="companyCode_companyName" name="companyName" value="">
 
@@ -413,7 +415,7 @@
             height: 480,
             closed: false,
             cache: false,
-            href: 'geneLandRegDEdit.jsp',
+            href: '${pageContext.request.contextPath}/geneLandReg/addGeneLand.do?year='+year,
             modal: true
         });
     }

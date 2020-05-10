@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.PeasantMapper">
+    <select id="selectByContractorID" resultType="peasant">
+        select * from m_peasant
+        <where>
+            <if test="contractorIDType!=null and contractorIDType!=''">
+                and contractorIDType=#{contractorIDType}
+            </if>
+            <if test="contractorID!=null and contractorID!=''">
+                and contractorID=#{contractorID}
+            </if>
+        </where>
+	</select>
+</mapper>

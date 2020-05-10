@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Service
 public interface IUserService {
     public User login(User user);
 
@@ -32,6 +31,8 @@ public interface IUserService {
     public void save(User user,String[] role);
 
     public User selectById(String userID);
+
+    public User selectByUserID(String userID);
 
     public void update(User user);
 

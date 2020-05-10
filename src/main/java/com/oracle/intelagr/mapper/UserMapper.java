@@ -19,6 +19,13 @@ public interface UserMapper {
 
     public User selectById(String userID);
 
+    /**
+     * 查看用户基本信息
+     * @param userID
+     * @return
+     */
+    public User selectByUserId(String userID);
+
     public int count(Map<String, Object> map);
 
     public void insert(User user);

@@ -3,12 +3,15 @@ package com.oracle.intelagr.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageInfo;
 import com.oracle.intelagr.common.JsonResult;
+import com.oracle.intelagr.common.TreeModel;
 import com.oracle.intelagr.entity.Role;
 import com.oracle.intelagr.entity.User;
+import com.oracle.intelagr.service.IRoleFunctionService;
 import com.oracle.intelagr.service.IRoleService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +27,8 @@ public class RoleController {
 
     @Autowired
     IRoleService iRoleService;
+    @Autowired
+    IRoleFunctionService iRoleFunctionService;
 
     org.apache.log4j.Logger logger = Logger.getLogger(UserController.class);
 
@@ -57,7 +62,6 @@ public class RoleController {
 
     /**
      * 添加角色
-     * @param map
      * @return
      */
     @RequestMapping("/save.do")
@@ -78,6 +82,12 @@ public class RoleController {
         return new JsonResult(false,"添加失败");
     }
 
+    /**
+     * 创建角色树
+     * @param id
+     * @param map
+     * @return
+     */
     @RequestMapping("roleAuth.do")
     public String roleAuth(Integer id,Map map){
         /**
@@ -85,7 +95,30 @@ public class RoleController {
          */
         Role role = iRoleService.queryById(id);
         map.put("role",role);
+        List<TreeModel> list = iRoleFunctionService.selectFunctions(role.getRoleCode());
+        ObjectMapper objectMapper = new ObjectMapper();
+        try{
+            map.put("jsonData",objectMapper.writeValueAsString(list));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return "role/roleAuth";
     }
 
+    /**
+     *  保存选中的角色权限
+     * @return
+     */
+    @RequestMapping("saveRoleAuth.do")
+    @ResponseBody
+    public JsonResult saveRoleAuth(@RequestBody Role role,HttpSession session){
+        try{
+            User loginUser = (User)session.getAttribute("loginUser");
+            role.setCreateUserId(loginUser.getUserID());
+            iRoleFunctionService.updateAuth(role);
+        }catch (Exception e){
+            return new JsonResult(false,"更新失败");
+        }
+        return new JsonResult(true);
+    }
 }
