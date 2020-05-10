@@ -7,75 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c651a067-30fe-4c2c-91bd-a54c016905d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/GeneLandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/ContractMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/PeasantMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IGeneLandService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/GeneLandServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/RoleFunctionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/ContractMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/PeasantMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/common/CommonInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/common/CommonInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/entity/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/entity/Peasant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/RoleFunctionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/RoleFunctionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IRoleFunctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IRoleFunctionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/YearCodeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/intelagr/mapper/YearCodeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegDEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegDEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/role/roleAuth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/role/roleAuth.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/user/updatePwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/updatePwd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/userList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/common/CommonInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/common/CommonInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/entity/Peasant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/entity/Peasant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/YearCodeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/mapper/YearCodeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IRoleFunctionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IRoleFunctionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/oracle/intelagr/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/common/CommonInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/common/CommonInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleFunctionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/YearCodeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/mapper/YearCodeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IRoleFunctionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IRoleFunctionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/com/oracle/intelagr/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/genelandreg/geneLandRegEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/genelandreg/geneLandRegEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/role/roleAuth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/role/roleAuth.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/user/updatePwd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/user/updatePwd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/inteloper-1.0-SNAPSHOT/pages/user/userList.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -101,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/GeneLandController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="387">
-              <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+              <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/GeneLandServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
-              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,10 +77,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegDEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="444" column="31" selection-start-line="444" selection-start-column="31" selection-end-line="444" selection-end-column="31" />
+            <state relative-caret-position="94">
+              <caret line="520" column="18" lean-forward="true" selection-start-line="520" selection-start-column="18" selection-end-line="520" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#table#0;n#form#0;n#fieldset#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/entity/Peasant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="79" column="27" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1711#1712#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#1810#1811#0" expanded="true" />
+                <element signature="e#1858#1859#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -763,7 +711,7 @@
       <workItem from="1588930487070" duration="5499000" />
       <workItem from="1588938793837" duration="5427000" />
       <workItem from="1588945246514" duration="46662000" />
-      <workItem from="1589073509317" duration="11450000" />
+      <workItem from="1589073509317" duration="12367000" />
     </task>
     <task id="LOCAL-00001" summary="commit file1">
       <created>1588948199647</created>
@@ -786,11 +734,18 @@
       <option name="project" value="LOCAL" />
       <updated>1588962611643</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit file3">
+      <created>1589092814801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589092814801</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69038000" />
+    <option name="totallyTimeSpent" value="69955000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,9 +758,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7352941" visible="true" weight="0.11461126" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7352941" visible="true" weight="0.17895442" />
       <window_info id="Structure" order="1" sideWeight="0.502451" side_tool="true" weight="0.2922252" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -815,7 +769,7 @@
       <window_info id="Web" order="7" sideWeight="0.2647059" side_tool="true" weight="0.2922252" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" x="22" y="228" width="1492" height="368" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.0509915" />
+      <window_info anchor="bottom" x="22" y="228" width="1492" height="368" id="Run" order="2" sideWeight="0.49865952" weight="0.6303116" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49865952" weight="0.4220963" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -829,7 +783,7 @@
       <window_info anchor="bottom" id="Problems" order="13" sideWeight="0.49865952" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" sideWeight="0.49932975" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Version Control" order="16" weight="0.4220963" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="16" visible="true" weight="0.4220963" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -942,7 +896,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit file1" />
     <MESSAGE value="commit file2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit file2" />
+    <MESSAGE value="commit file3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit file3" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1263,19 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/entity/Peasant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1858#1859#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/mapper/ContractMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1324,7 +1266,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/service/impl/GeneLandServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1344,17 +1286,31 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/controller/GeneLandController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
-          <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oracle/intelagr/entity/Peasant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/genelandreg/geneLandRegDEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="444" column="31" selection-start-line="444" selection-start-column="31" selection-end-line="444" selection-end-column="31" />
+        <state relative-caret-position="94">
+          <caret line="520" column="18" lean-forward="true" selection-start-line="520" selection-start-column="18" selection-end-line="520" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#table#0;n#form#0;n#fieldset#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
