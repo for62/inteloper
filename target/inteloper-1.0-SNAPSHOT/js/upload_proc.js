@@ -1,11 +1,11 @@
 /**
  *
- * @param bizType  æ ‡è¯†
- * @param title    åˆ—è¡¨æ˜¾ç¤ºæ—¶çš„å¤´åç§°
+ * @param bizType  ±êÊ¶
+ * @param title    ÁĞ±íÏÔÊ¾Ê±µÄÍ·Ãû³Æ
  */
 function showUploadDialog(bizType, bizCode) {
     $('#uploadDialog').dialog({
-        title: 'æ–‡ä»¶ä¸Šä¼ ',
+        title: 'ÎÄ¼şÉÏ´«',
         width: 540,
         height: 400,
         closed: false,
@@ -31,25 +31,25 @@ function showFileList(bizType, bizCode) {
         dataType: 'text',
         contentType: 'text/html',
         error: function (result) {
-            alert('è·å¾—æ–‡ä»¶åˆ—è¡¨å¤±è´¥');
+            alert('»ñµÃÎÄ¼şÁĞ±íÊ§°Ü');
         },
         async: true,
         success: function (result) {
             $('#imgList').datagrid('loadData', {total: 0, rows: []});
             $('#videoList').datagrid('loadData', {total: 0, rows: []});
             var obj = JSON.parse(result);
-            //é¢„è§ˆæ•°ç»„
+            //Ô¤ÀÀÊı×é
             var imgPathArray = new Array();
             var imgDescArray = new Array();
             var i = 0;
-            //è§†é¢‘ä¿¡æ¯
+            //ÊÓÆµĞÅÏ¢
             var videoArray = new Array();
             var videoDescArray = new Array();
             var j = 0;
             for (var k in obj.data) {
                 var mfile = obj.data[k];
                 if (mfile.fileType == "01" || mfile.fileType == "" || (typeof (mfile.fileType) == "undefined")) {
-                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\")'>åˆ é™¤</a>";
+                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\")'>É¾³ı</a>";
                     $('#imgList').datagrid('appendRow', {
                         originalName: mfile.originalName,
                         fileInfo: mfile.fileInfo,
@@ -65,7 +65,7 @@ function showFileList(bizType, bizCode) {
                     imgDescArray[i] = mfile.fileInfo;
                     i++;
                 } else {
-                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delVideoFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\",\"" + mfile.fileInfo + "\")'>åˆ é™¤</a>";
+                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delVideoFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\",\"" + mfile.fileInfo + "\")'>É¾³ı</a>";
                     $('#videoList').datagrid('appendRow', {
                         videoURL: mfile.filePath,
                         urlDesc: mfile.fileInfo,
@@ -78,7 +78,7 @@ function showFileList(bizType, bizCode) {
                 }
             }
 
-            //æ˜¾ç¤ºå›¾ç‰‡é¢„è§ˆ
+            //ÏÔÊ¾Í¼Æ¬Ô¤ÀÀ
             if (imgPathArray.length >= 0) {
                 var previewHtml = "";
                 for (j = 0; j < imgPathArray.length; j++) {
@@ -88,7 +88,7 @@ function showFileList(bizType, bizCode) {
             }
             imgList("#imglist01", "#imgbtn01");
 
-            //æ˜¾ç¤ºè§†é¢‘é¢„è§ˆ
+            //ÏÔÊ¾ÊÓÆµÔ¤ÀÀ
             if (videoArray.length > 0) {
                 var previewHtml = "";
                 for (j = 0; j < videoArray.length; j++) {
@@ -106,10 +106,10 @@ function showFileList(bizType, bizCode) {
     });
 }
 
-//bizCodeå¦‚æœæ²¡æœ‰å°±ä¼ ç©ºä¸²
+//bizCodeÈç¹ûÃ»ÓĞ¾Í´«¿Õ´®
 function delUploadFile(bizType, bizCode, filePath) {
-    //bizCode ä¸ºç©ºæ—¶ï¼Œä¼ ç©ºä¸²
-    $.messager.confirm("ç¡®è®¤", "æ‚¨ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ", function (deleteAction) {
+    //bizCode Îª¿ÕÊ±£¬´«¿Õ´®
+    $.messager.confirm("È·ÈÏ", "ÄúÈ·ÈÏÒªÉ¾³ıÂğ£¿", function (deleteAction) {
         if (!deleteAction) {
             return false;
         }
@@ -120,19 +120,19 @@ function delUploadFile(bizType, bizCode, filePath) {
             },
             function (e) {
                 if (200 == e.status) {
-                    //é‡æ–°æ›´æ–°æœ¬åœ°åˆ—è¡¨
-                    $.messager.alert('æç¤º', 'åˆ é™¤æˆåŠŸã€‚', 'info');
+                    //ÖØĞÂ¸üĞÂ±¾µØÁĞ±í
+                    $.messager.alert('ÌáÊ¾', 'É¾³ı³É¹¦¡£', 'info');
                     showFileList(bizType, $('#bizCode').val());
                 } else {
-                    $.messager.alert('æç¤º', 'åˆ é™¤å¤±è´¥ã€‚' + e.msg, 'info');
+                    $.messager.alert('ÌáÊ¾', 'É¾³ıÊ§°Ü¡£' + e.msg, 'info');
                 }
             });
     });
 }
 
-//åˆ é™¤è§†é¢‘
+//É¾³ıÊÓÆµ
 function delVideoFile(bizType, bizCode, filePath, fileInfo) {
-    $.messager.confirm("ç¡®è®¤", "æ‚¨ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ", function (deleteAction) {
+    $.messager.confirm("È·ÈÏ", "ÄúÈ·ÈÏÒªÉ¾³ıÂğ£¿", function (deleteAction) {
         if (!deleteAction) {
             return false;
         }
@@ -144,11 +144,11 @@ function delVideoFile(bizType, bizCode, filePath, fileInfo) {
             },
             function (e) {
                 if (200 == e.status) {
-                    //é‡æ–°æ›´æ–°æœ¬åœ°åˆ—è¡¨
-                    $.messager.alert('æç¤º', 'åˆ é™¤æˆåŠŸã€‚', 'info');
+                    //ÖØĞÂ¸üĞÂ±¾µØÁĞ±í
+                    $.messager.alert('ÌáÊ¾', 'É¾³ı³É¹¦¡£', 'info');
                     showFileList(bizType, $('#bizCode').val());
                 } else {
-                    $.messager.alert('æç¤º', 'åˆ é™¤å¤±è´¥ã€‚' + e.msg, 'info');
+                    $.messager.alert('ÌáÊ¾', 'É¾³ıÊ§°Ü¡£' + e.msg, 'info');
                 }
             });
     });

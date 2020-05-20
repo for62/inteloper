@@ -21,7 +21,7 @@
 
     // Add helper object
     F.helpers.buttons = {
-        tpl: '<div id="fancybox-buttons"><ul><li><a class="btnPrev" title="ä¸Šä¸€å¼ " href="javascript:;"></a></li><li><a class="btnPlay" title="æ’­æ”¾å¹»ç¯ç‰‡" href="javascript:;"></a></li><li><a class="btnNext" title="ä¸‹ä¸€å¼ " href="javascript:;"></a></li><li><a class="btnToggle" title="æŸ¥çœ‹åŸå›¾" href="javascript:;"></a></li><li><a class="btnRotateL" title="å‘å·¦æ—‹è½¬" href="javascript:;"></a></li><li><a class="btnRotateR" title="å‘å³æ—‹è½¬" href="javascript:;"></a></li><li><a class="btnClose" title="å…³é—­" href="javascript:jQuery.fancybox.close();"></a></li></ul></div>',
+        tpl: '<div id="fancybox-buttons"><ul><li><a class="btnPrev" title="ÉÏÒ»ÕÅ" href="javascript:;"></a></li><li><a class="btnPlay" title="²¥·Å»ÃµÆÆ¬" href="javascript:;"></a></li><li><a class="btnNext" title="ÏÂÒ»ÕÅ" href="javascript:;"></a></li><li><a class="btnToggle" title="²é¿´Ô­Í¼" href="javascript:;"></a></li><li><a class="btnRotateL" title="Ïò×óĞı×ª" href="javascript:;"></a></li><li><a class="btnRotateR" title="ÏòÓÒĞı×ª" href="javascript:;"></a></li><li><a class="btnClose" title="¹Ø±Õ" href="javascript:jQuery.fancybox.close();"></a></li></ul></div>',
         list: null,
         buttons: {},
 
@@ -77,8 +77,8 @@
                     next: this.list.find('.btnNext').click(F.next),
                     play: this.list.find('.btnPlay').click(F.play),
                     toggle: this.list.find('.btnToggle').click(F.toggle),
-                    rotateL: this.list.find('.btnRotateL').click(F.rotateL),//å¢åŠ å·¦è½¬å•å‡»äº‹ä»¶  
-                    rotateR: this.list.find('.btnRotateR').click(F.rotateR)//å¢åŠ å³è½¬å•å‡»äº‹ä»¶  
+                    rotateL: this.list.find('.btnRotateL').click(F.rotateL),//Ôö¼Ó×ó×ªµ¥»÷ÊÂ¼ş  
+                    rotateR: this.list.find('.btnRotateR').click(F.rotateR)//Ôö¼ÓÓÒ×ªµ¥»÷ÊÂ¼ş  
                 }
             }
 

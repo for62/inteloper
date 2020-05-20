@@ -70,6 +70,35 @@ public class Peasant {
     // 地形
     private List<Contract> contractList;
 
+    // 土地数量相关数据
+    private float zmj;
+    private float yba;
+    private float kba;
+
+    public float getZmj() {
+        return zmj;
+    }
+
+    public void setZmj(float zmj) {
+        this.zmj = zmj;
+    }
+
+    public float getYba() {
+        return yba;
+    }
+
+    public void setYba(float yba) {
+        this.yba = yba;
+    }
+
+    public float getKba() {
+        return kba;
+    }
+
+    public void setKba(float kba) {
+        this.kba = kba;
+    }
+
     /**
      * default constructor
      */
@@ -326,6 +355,45 @@ public class Peasant {
 
     public Date getSurveyDate() {
         return surveyDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Peasant{" +
+                "id=" + id +
+                ", contractorCode='" + contractorCode + '\'' +
+                ", contractorName='" + contractorName + '\'' +
+                ", contractorID='" + contractorID + '\'' +
+                ", contractorIDType='" + contractorIDType + '\'' +
+                ", contractorAge=" + contractorAge +
+                ", contractorSex='" + contractorSex + '\'' +
+                ", contractorBirth='" + contractorBirth + '\'' +
+                ", contractorTel='" + contractorTel + '\'' +
+                ", cityCode='" + cityCode + '\'' +
+                ", townCode='" + townCode + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", groupName='" + groupName + '\'' +
+                ", contractorZipcode='" + contractorZipcode + '\'' +
+                ", contractorhouseholdType='" + contractorhouseholdType + '\'' +
+                ", contractorType='" + contractorType + '\'' +
+                ", contractId='" + contractId + '\'' +
+                ", contractorNation='" + contractorNation + '\'' +
+                ", rightId='" + rightId + '\'' +
+                ", attestor='" + attestor + '\'' +
+                ", attestMechanism='" + attestMechanism + '\'' +
+                ", attestDate='" + attestDate + '\'' +
+                ", attestNo='" + attestNo + '\'' +
+                ", landPurpose='" + landPurpose + '\'' +
+                ", rightGetWay='" + rightGetWay + '\'' +
+                ", contractStartDate=" + contractStartDate +
+                ", contractYear=" + contractYear +
+                ", contractEndDate=" + contractEndDate +
+                ", getLandPersonCount=" + getLandPersonCount +
+                ", familyPersonCount=" + familyPersonCount +
+                ", surveyDate=" + surveyDate +
+                ", surveyMemo='" + surveyMemo + '\'' +
+                ", contractList=" + contractList +
+                '}';
     }
 
     public void setSurveyDate(Date surveyDate) {

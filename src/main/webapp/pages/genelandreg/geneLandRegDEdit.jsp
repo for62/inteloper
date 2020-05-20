@@ -395,7 +395,7 @@
         var idType = $("#idType").combobox('getValue');
         showLoading();
         lastQcIdNumber = contractorId;
-        Public.ajaxGet('${pageContext.request.contextPath}/geneLandReg/getContratorInfo?contratorId=' + contractorId + "&contractorIDType=" + idType + "&year=${year}", {}, function (e) {
+        Public.ajaxGet('${pageContext.request.contextPath}/geneLandReg/getContractorInfo.do?contratorId=' + contractorId + "&contractorIDType=" + idType + "&year=${year}", {}, function (e) {
             hideLoading();
             if (200 == e.status) {
                 clearDatasTable();

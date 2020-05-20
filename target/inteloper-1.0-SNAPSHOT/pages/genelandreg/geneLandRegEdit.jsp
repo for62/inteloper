@@ -39,7 +39,7 @@
         <!-- 联系方式 -->
         <input type="hidden" name="contractorTelTmp" id="contractorTelTmp" value="">
 
-        <input type="hidden" id="applyBatchNo" name="applyBatchNo" value="PT20170521000003"/>
+        <input type="hidden" id="applyBatchNo" name="applyBatchNo" value="${ptNumber}"/>
         <input type="hidden" name="townCode" value="1">
         <input type="hidden" name="countryCode" value="2">
         <input type="hidden" name="groupName" value="3">
@@ -56,7 +56,7 @@
                     <td class="table_common_td_label_style">年度：</td>
                     <td class="table_common_td_txt_style editableFalse">
 
-                        <s:select id="year" name="year" entityName="yearcode"></s:select>
+                        <s:select id="year" name="year" entityName="yearcode" hasPleaseSelectOption="true"></s:select>
 
 <%--                        <select id="year" name="year" class="easyui-combobox" style="width:187px;height:25px"--%>
 <%--                                data-options="editable:false">--%>

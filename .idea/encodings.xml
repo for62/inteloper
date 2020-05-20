@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/easyui-lang-zh_CN.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/genelandreg.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/grainreg.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.ScrollPic.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.easyui.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.fancybox-buttons.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.fancybox.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/upload.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/upload_proc.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/upload_view.js" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

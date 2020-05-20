@@ -39,9 +39,12 @@ public class UserController {
      */
     @RequestMapping("/list.do")
     public String userList(@RequestParam Map map, Map request, @RequestParam(value = "page", defaultValue = "1") Integer pageNum, @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
-        System.err.println(map+":"+pageNum+":"+pageSize);
+        System.out.println("-------------------------------------------");
         logger.debug("map:"+map);
+        System.out.println(pageNum+"---"+pageSize);
+        System.out.println("-------------------------------------------");
         PageInfo<User> pageInfo = iUserService.queryForPage(map, pageNum, pageSize);
+        System.out.println(pageInfo+"-------------");
         request.put("pageModel", pageInfo);
         request.put("data", map);
         return "user/userList";
@@ -85,9 +88,8 @@ public class UserController {
      */
     @RequestMapping("detail.do")
     public String detail(@RequestParam(value = "userID")String userID,Map map){
-        System.err.println(userID);
         map.put("user",iUserService.selectByUserID(userID));
-        return "user/basicInfoEdit";
+        return "user/basicInfoBrowse";
     }
 
     /**
@@ -120,7 +122,6 @@ public class UserController {
      * @return
      */
     @RequestMapping("delete.do")
-    @Transactional
     public String delete(@RequestParam(value = "userID")String userID,Map map){
         iUserService.delete(userID);
         return "redirect:/user/list.do";

@@ -11,12 +11,10 @@ import com.oracle.intelagr.service.IRoleService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +29,42 @@ public class RoleController {
     IRoleFunctionService iRoleFunctionService;
 
     org.apache.log4j.Logger logger = Logger.getLogger(UserController.class);
+
+    /**
+     * 查询回显
+     * @param id
+     * @param map
+     * @return
+     */
+    @RequestMapping("/editRoleInit.do")
+    public String editRoleInit(@RequestParam("id") Integer id,Map map){
+        Role role = iRoleService.queryById(id);
+        map.put("roleEdit",role);
+        return "role/editRole";
+    }
+
+    /**
+     * 修改角色
+     * @param role
+     * @return
+     */
+    @RequestMapping("updateRole.do")
+    @ResponseBody
+    public void updateRole(Role role){
+        System.out.println("role.getRemark()---------"+role.getRemark());
+        iRoleService.update(role);
+    }
+
+    /**
+     * 删除角色
+     * @return
+     */
+    @RequestMapping("delete.do")
+    @ResponseBody
+    public void delete(@RequestParam("id") Integer id){
+        System.out.println("---------------"+id);
+        iRoleService.delete(id);
+    }
 
     /**
      * 分页查询---角色
@@ -65,8 +99,7 @@ public class RoleController {
      * @return
      */
     @RequestMapping("/save.do")
-    @ResponseBody
-    public JsonResult save(Role role, HttpSession session) {
+    public String save(Role role, HttpSession session) {
         /**
          * 获取登录用户信息
          */
@@ -77,9 +110,10 @@ public class RoleController {
             role.setCreateUserId(loginUser.getUserID());
             role.setUpdateUserId(loginUser.getUserID());
             iRoleService.save(role);
-            return new JsonResult(true);
+            return "redirect:/role/list.do";
+        }else{
+            return "redirect:/pages/login.jsp";
         }
-        return new JsonResult(false,"添加失败");
     }
 
     /**
@@ -90,6 +124,7 @@ public class RoleController {
      */
     @RequestMapping("roleAuth.do")
     public String roleAuth(Integer id,Map map){
+        logger.debug("进来了~");
         /**
          * 查询角色
          */
@@ -112,6 +147,8 @@ public class RoleController {
     @RequestMapping("saveRoleAuth.do")
     @ResponseBody
     public JsonResult saveRoleAuth(@RequestBody Role role,HttpSession session){
+        System.out.println("role.getFunctions()----------------"+role.getFunctions());
+        System.out.println("role.getRoleCode()----------------"+role.getRoleCode());
         try{
             User loginUser = (User)session.getAttribute("loginUser");
             role.setCreateUserId(loginUser.getUserID());

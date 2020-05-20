@@ -1,6 +1,7 @@
 package com.oracle.intelagr.entity;
 
 import java.util.Date;
+import java.util.List;
 
 
 public class GeneLandReg extends BaseEntity {
@@ -21,6 +22,16 @@ public class GeneLandReg extends BaseEntity {
     private String status;
     //驳回原因
     private String reason;
+
+    private List<GeneLandRegD> geneLandRegDList;
+
+    public List<GeneLandRegD> getGeneLandRegDList() {
+        return geneLandRegDList;
+    }
+
+    public void setGeneLandRegDList(List<GeneLandRegD> geneLandRegDList) {
+        this.geneLandRegDList = geneLandRegDList;
+    }
 
     private Float mjsum;
 

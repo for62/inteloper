@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.GeneLandRegMapper">
+	<insert id="insert" parameterType="com.oracle.intelagr.entity.GeneLandReg" useGeneratedKeys="true" keyProperty="id">
+		insert into b_ generallandregh (ID, Year, CompanyCode,
+		CompanyName, ApplyBatchNo, Auditor,
+		AuditTime, Status, Reason,
+		Remark, DeleteFlag, CreateUserId,
+		CreateDate, UpdateUserId, UpdateDate
+		values (nu11, #{year, jdbcType=VARCHAR}, # {companyCode, jdbcType=VARCHAR}，
+		# {companyName, jdbcType=VARCHAR}，# {app1yBatchNo, jdbcType=VARCHAR}，# {auditor, jdbcType=VARCHAR} ,
+		# {auditTime, jdbcType=TIMESTAMP}，"02"，#{reason, jdbcType=VARCHAR}，
+		# {remark, jdbcType=VARCHAR}, # {deleteflag, jdbcType=VARCHAR}, # {createUserId, jdbcType=VARCHAR}，
+		# {createDate, jdbcType=TIMESTAMP}，# {updateUser Id, jdbcType=VARCHAR}, # {updateDate, jdbcType=TIMESTAMP}
+	</insert>
+
+	<select id="getArc">
+
+	</select>
+</mapper>

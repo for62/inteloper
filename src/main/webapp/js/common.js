@@ -2,7 +2,7 @@ var Public = Public || {};
 var Business = Business || {};
 Public.isIE6 = !window.XMLHttpRequest; // ie6
 
-/* è·å–URLå‚æ•°å€¼ */
+/* »ñÈ¡URL²ÎÊıÖµ */
 Public.getRequest = Public.urlParam = function () {
     var param, url = location.search, theRequest = {};
     if (url.indexOf("?") != -1) {
@@ -17,7 +17,7 @@ Public.getRequest = Public.urlParam = function () {
 };
 
 /*
- * é€šç”¨postè¯·æ±‚ï¼Œè¿”å›json url:è¯·æ±‚åœ°å€ï¼Œ paramsï¼šä¼ é€’çš„å‚æ•°{...}ï¼Œ callbackï¼šè¯·æ±‚æˆåŠŸå›è°ƒ
+ * Í¨ÓÃpostÇëÇó£¬·µ»Øjson url:ÇëÇóµØÖ·£¬ params£º´«µİµÄ²ÎÊı{...}£¬ callback£ºÇëÇó³É¹¦»Øµ÷
  */
 Public.ajaxPost = function (url, params, callback) {
     $.ajax({
@@ -34,10 +34,10 @@ Public.ajaxPost = function (url, params, callback) {
             /**
              parent.Public.tips({
 				type : 1,
-				content : 'æ“ä½œå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œé“¾æ¥ï¼'
+				content : '²Ù×÷Ê§°Ü£¬Çë¼ì²éÄúµÄÍøÂçÁ´½Ó£¡'
 			});
              **/
-            $.messager.alert('é”™è¯¯', "æ“ä½œå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œé“¾æ¥ï¼", 'error');
+            $.messager.alert('´íÎó', "²Ù×÷Ê§°Ü£¬Çë¼ì²éÄúµÄÍøÂçÁ´½Ó£¡", 'error');
         }
     });
 };
@@ -57,16 +57,16 @@ Public.ajaxGet = function (url, params, callback) {
             /**
              parent.Public.tips({
 				type : 1,
-				content : 'æ“ä½œå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œé“¾æ¥ï¼'
+				content : '²Ù×÷Ê§°Ü£¬Çë¼ì²éÄúµÄÍøÂçÁ´½Ó£¡'
 			});
              **/
-            $.messager.alert('é”™è¯¯', "æ“ä½œå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œé“¾æ¥ï¼", 'error');
+            $.messager.alert('´íÎó', "²Ù×÷Ê§°Ü£¬Çë¼ì²éÄúµÄÍøÂçÁ´½Ó£¡", 'error');
         }
     });
 };
 
 
-/* æ“ä½œæç¤º */
+/* ²Ù×÷ÌáÊ¾ */
 Public.tips = function (options) {
     return new Public.Tips(options);
 }
@@ -192,10 +192,10 @@ Public.Tips.prototype = {
         });
     }
 };
-// æ•°å€¼æ˜¾ç¤ºæ ¼å¼è½¬åŒ–
+// ÊıÖµÏÔÊ¾¸ñÊ½×ª»¯
 Public.numToCurrency = function (val, dec) {
     val = parseFloat(val);
-    dec = dec || 2; // å°æ•°ä½
+    dec = dec || 2; // Ğ¡ÊıÎ»
     if (val === 0 || isNaN(val)) {
         return '';
     }
@@ -203,7 +203,7 @@ Public.numToCurrency = function (val, dec) {
     var reg = /(\d{1,3})(?=(\d{3})+(?:$|\D))/g;
     return val[0].replace(reg, "$1,") + '.' + val[1];
 };
-// æ•°å€¼æ˜¾ç¤º
+// ÊıÖµÏÔÊ¾
 Public.currencyToNum = function (val) {
     var val = String(val);
     if ($.trim(val) == '') {
@@ -213,7 +213,7 @@ Public.currencyToNum = function (val) {
     val = parseFloat(val);
     return isNaN(val) ? 0 : val;
 };
-// åªå…è®¸è¾“å…¥æ•°å­—
+// Ö»ÔÊĞíÊäÈëÊı×Ö
 Public.numerical = function (e) {
     var allowed = '0123456789.-', allowedReg;
     allowed = allowed.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -226,7 +226,7 @@ Public.numerical = function (e) {
     ;
 };
 
-// é™åˆ¶åªèƒ½è¾“å…¥å…è®¸çš„å­—ç¬¦ï¼Œä¸æ”¯æŒä¸­æ–‡çš„æ§åˆ¶
+// ÏŞÖÆÖ»ÄÜÊäÈëÔÊĞíµÄ×Ö·û£¬²»Ö§³ÖÖĞÎÄµÄ¿ØÖÆ
 Public.limitInput = function (obj, allowedReg) {
     var ctrlKey = null;
     obj.css('ime-mode', 'disabled').on('keydown', function (e) {
@@ -245,7 +245,7 @@ Public.limitInput = function (obj, allowedReg) {
             }
         });
 };
-// é™åˆ¶è¾“å…¥çš„å­—ç¬¦é•¿åº¦
+// ÏŞÖÆÊäÈëµÄ×Ö·û³¤¶È
 Public.limitLength = function (obj, count) {
     obj.on('keyup', function (e) {
         if (count < obj.val().length) {
@@ -254,7 +254,7 @@ Public.limitLength = function (obj, count) {
         }
     });
 };
-/* æ‰¹é‡ç»‘å®šé¡µç­¾æ‰“å¼€ */
+/* ÅúÁ¿°ó¶¨Ò³Ç©´ò¿ª */
 Public.pageTab = function () {
     $(document)
         .on(
@@ -329,7 +329,7 @@ $.fn.enterKey = function () {
     });
 };
 
-// inputå ä½ç¬¦
+// inputÕ¼Î»·û
 $.fn.placeholder = function () {
     this.each(function () {
         $(this).focus(function () {
@@ -347,7 +347,7 @@ $.fn.placeholder = function () {
     });
 };
 
-// å•é€‰æ¡†æ’ä»¶
+// µ¥Ñ¡¿ò²å¼ş
 $.fn.cssRadio = function (opts) {
     var opts = $.extend({}, opts);
     var $_radio = $('label.radio', this), $_this = this;
@@ -401,7 +401,7 @@ $.fn.cssRadio = function (opts) {
         }
     }
 };
-// å¤é€‰æ¡†æ’ä»¶
+// ¸´Ñ¡¿ò²å¼ş
 $.fn.cssCheckbox = function () {
     var $_chk = $(".chk", this);
     $_chk.each(function () {
@@ -456,7 +456,7 @@ Public.getDefaultPage = function () {
     } while (true);
 };
 
-// æƒé™éªŒè¯
+// È¨ÏŞÑéÖ¤
 Business.verifyRight = function (right) {
     var system = Public.getDefaultPage().SYSTEM;
     var isAdmin = system.isAdmin;
@@ -473,11 +473,11 @@ Business.verifyRight = function (right) {
         } else {
             var html = [
                 '<div class="ui-dialog-tips">',
-                '<h4 class="tit">è°¢è°¢æ‚¨ä½¿ç”¨æœ¬äº§å“ï¼Œæ‚¨çš„å½“å‰æœåŠ¡å·²ç»åˆ°æœŸï¼Œåˆ°æœŸ3ä¸ªæœˆåæ•°æ®å°†è¢«è‡ªåŠ¨æ¸…é™¤ï¼Œå¦‚éœ€ç»§ç»­ä½¿ç”¨è¯·è´­ä¹°/ç»­è´¹ï¼</h4>',
+                '<h4 class="tit">Ğ»Ğ»ÄúÊ¹ÓÃ±¾²úÆ·£¬ÄúµÄµ±Ç°·şÎñÒÑ¾­µ½ÆÚ£¬µ½ÆÚ3¸öÔÂºóÊı¾İ½«±»×Ô¶¯Çå³ı£¬ÈçĞè¼ÌĞøÊ¹ÓÃÇë¹ºÂò/Ğø·Ñ£¡</h4>',
                 '</div>'].join('');
             $.dialog({
                 width: 280,
-                title: 'ç³»ç»Ÿæç¤º',
+                title: 'ÏµÍ³ÌáÊ¾',
                 icon: 'alert.gif',
                 fixed: true,
                 lock: true,
@@ -492,12 +492,12 @@ Business.verifyRight = function (right) {
             return true;
         } else {
             var html = ['<div class="ui-dialog-tips">',
-                '<h4 class="tit">æ‚¨æ²¡æœ‰è¯¥åŠŸèƒ½çš„ä½¿ç”¨æƒé™å“¦ï¼</h4>',
-                '<p>è¯·è”ç³»ç®¡ç†å‘˜ï¼ˆ' + system.realName + 'ï¼‰ä¸ºæ‚¨æˆæƒï¼</p>', '</div>']
+                '<h4 class="tit">ÄúÃ»ÓĞ¸Ã¹¦ÄÜµÄÊ¹ÓÃÈ¨ÏŞÅ¶£¡</h4>',
+                '<p>ÇëÁªÏµ¹ÜÀíÔ±£¨' + system.realName + '£©ÎªÄúÊÚÈ¨£¡</p>', '</div>']
                 .join('');
             $.dialog({
                 width: 240,
-                title: 'ç³»ç»Ÿæç¤º',
+                title: 'ÏµÍ³ÌáÊ¾',
                 icon: 'alert.gif',
                 fixed: true,
                 lock: true,
@@ -550,17 +550,17 @@ Business.customerCombo = function ($_obj, opts, $_vobj, append) {
     }, opts);
 
     if (append && append.showAdd)
-        opts.extraListHtml = '<a href="javascript:void(0);" id="quickAddCustomer" class="quick-add-link"><i class="ui-icon-add"></i>æ–°å¢å®¢æˆ·</a>';
+        opts.extraListHtml = '<a href="javascript:void(0);" id="quickAddCustomer" class="quick-add-link"><i class="ui-icon-add"></i>ĞÂÔö¿Í»§</a>';
 
     var customerCombo = $_obj.combo(opts).getCombo();
-    // æ–°å¢å®¢æˆ·
+    // ĞÂÔö¿Í»§
     $('#quickAddCustomer').on(
         'click',
         function (e) {
             e.preventDefault();
 
             $.dialog({
-                title: 'æ–°å¢å®¢æˆ·',
+                title: 'ĞÂÔö¿Í»§',
                 content: 'url:/Customer/CustomerEdit',
                 data: {
                     oper: 'add',
@@ -595,7 +595,7 @@ Business.goodsCombo = function ($_obj, opts) {
                 data: '/Manage/GoodsGridData',
                 ajaxOptions: {
                     formatData: function (data) {
-                        parent.SYSTEM.goodsInfo = data.rows; // æ›´æ–°
+                        parent.SYSTEM.goodsInfo = data.rows; // ¸üĞÂ
                         return data.rows;
                     }
                 },
@@ -609,7 +609,7 @@ Business.goodsCombo = function ($_obj, opts) {
                 value: 'GoodsId',
                 defaultSelected: -1,
                 editable: true,
-                extraListHtml: '<a href="javascript:void(0);" id="quickAddGoods" class="quick-add-link"><i class="ui-icon-add"></i>æ–°å¢å•†å“</a>',
+                extraListHtml: '<a href="javascript:void(0);" id="quickAddGoods" class="quick-add-link"><i class="ui-icon-add"></i>ĞÂÔöÉÌÆ·</a>',
                 maxListWidth: 500,
                 cache: false,
                 forceSelection: true,
@@ -646,11 +646,11 @@ Business.goodsCombo = function ($_obj, opts) {
 
     var goodsCombo = $_obj.combo(opts).getCombo();
 
-    // æ–°å¢å•†å“
+    // ĞÂÔöÉÌÆ·
     $('#quickAddGoods').on('click', function (e) {
         e.preventDefault();
         $.dialog({
-            title: 'æ–°å¢å•†å“',
+            title: 'ĞÂÔöÉÌÆ·',
             content: 'url:/Manage/GoodsEdit',
             data: {
                 oper: 'add',
@@ -682,7 +682,7 @@ Business.goodsCombo = function ($_obj, opts) {
 
 Business.billsEvent = function (obj, type, flag) {
     var _self = obj;
-    // æ–°å¢åˆ†å½•
+    // ĞÂÔö·ÖÂ¼
     $('.grid-wrap').on(
         'click',
         '.ui-icon-plus',
@@ -706,7 +706,7 @@ Business.billsEvent = function (obj, type, flag) {
                 _self.newId++;
             }
         });
-    // åˆ é™¤åˆ†å½•
+    // É¾³ı·ÖÂ¼
     $('.grid-wrap').on('click', '.ui-icon-trash', function (e) {
         var cellEdit = $("#grid").jqGrid("getGridParam")['cellEdit'];
         if (!cellEdit)
@@ -715,7 +715,7 @@ Business.billsEvent = function (obj, type, flag) {
         if ($('#grid tbody tr').length === 2) {
             parent.Public.tips({
                 type: 2,
-                content: 'è‡³å°‘ä¿ç•™ä¸€æ¡åˆ†å½•ï¼'
+                content: 'ÖÁÉÙ±£ÁôÒ»Ìõ·ÖÂ¼£¡'
             });
             return false;
         }
@@ -726,13 +726,13 @@ Business.billsEvent = function (obj, type, flag) {
         }
         ;
     });
-    // æ‰¹é‡æ·»åŠ 
+    // ÅúÁ¿Ìí¼Ó
     $('.grid-wrap').on('click', '.ui-icon-ellipsis', function (e) {
 
         $.dialog({
             width: 620,
             height: 500,
-            title: 'é€‰æ‹©å•†å“',
+            title: 'Ñ¡ÔñÉÌÆ·',
             content: 'url:/Manage/GoodsBatch',
             data: {
                 curId: _self.curId,
@@ -757,7 +757,7 @@ Business.billsEvent = function (obj, type, flag) {
             cancel: true
         });
     });
-    // å–æ¶ˆåˆ†å½•ç¼–è¾‘çŠ¶æ€
+    // È¡Ïû·ÖÂ¼±à¼­×´Ì¬
     $(document).bind(
         'click.cancel',
         function (e) {
@@ -887,21 +887,21 @@ function reloadImageView() {
 
 })(jQuery);
 
-//æ˜¯å¦æ˜¯æ•°å­—
+//ÊÇ·ñÊÇÊı×Ö
 function isNumber(value) {
     var re = /^\d+(\.\d+)?$/;
     if (!re.test(value)) return false;
     return true;
 }
 
-//åˆ¤æ–­æ˜¯å¦æ˜¯æ­£æ•°
+//ÅĞ¶ÏÊÇ·ñÊÇÕıÊı
 function isInt(value) {
     var re = /^[0-9]+[0-9]*]*$/;
     if (!re.test(value)) return false;
     return true;
 }
 
-//åˆ¤æ–­æ˜¯å¦æ˜¯æµ®ç‚¹æ•°
+//ÅĞ¶ÏÊÇ·ñÊÇ¸¡µãÊı
 function isFloat(value) {
     var re = /^[-0-9]+([.]\d{1,2})?$/;
     ;
@@ -909,7 +909,7 @@ function isFloat(value) {
     return true;
 }
 
-//é‚®ç®±åˆ¤æ–­
+//ÓÊÏäÅĞ¶Ï
 function isEmail(email) {
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (filter.test(email)) {
@@ -918,7 +918,7 @@ function isEmail(email) {
     return false;
 }
 
-//æ‰‹æœºå’Œç”µè¯
+//ÊÖ»úºÍµç»°
 function isTel(tel) {
     var isPhone = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
     var isMob = /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
@@ -930,7 +930,7 @@ function isTel(tel) {
 }
 
 /**
- * å°æ•°ä½æ•°æ§åˆ¶
+ * Ğ¡ÊıÎ»Êı¿ØÖÆ
  * @param num
  * @param digits
  * @returns
@@ -940,7 +940,7 @@ function numberDecimalDigits(num, digits) {
 }
 
 /**
- * æ—¥æœŸæ¯”è¾ƒæ§åˆ¶
+ * ÈÕÆÚ±È½Ï¿ØÖÆ
  * @param startDate
  * @param endDate
  * @returns
@@ -962,14 +962,14 @@ function dateCompare(startDate, endDate) {
 
 }
 
-//é‡‡ç”¨jquery easyui loading cssæ•ˆæœ   
+//²ÉÓÃjquery easyui loading cssĞ§¹û   
 function showLoading() {
     $("<div class=\"datagrid-mask\"></div>").css({
         display: "block",
         width: "100%",
         height: $(window).height()
     }).appendTo("body");
-    $("<div class=\"datagrid-mask-msg\"></div>").html("æ­£åœ¨å¤„ç†ï¼Œè¯·ç¨å€™ã€‚ã€‚ã€‚").appendTo("body").css({
+    $("<div class=\"datagrid-mask-msg\"></div>").html("ÕıÔÚ´¦Àí£¬ÇëÉÔºò¡£¡£¡£").appendTo("body").css({
         display: "block",
         left: ($(document.body).outerWidth(true) - 190) / 2,
         top: ($(window).height() - 45) / 2
@@ -982,12 +982,12 @@ function hideLoading() {
 }
 
 /**
- * åˆ¤æ–­èº«ä»½è¯é•¿åº¦æ˜¯å¦åˆæ³•
+ * ÅĞ¶ÏÉí·İÖ¤³¤¶ÈÊÇ·ñºÏ·¨
  * @param card
  * @returns {Boolean}
  */
 function isCardNo(card) {
-    //èº«ä»½è¯å·ç ä¸º15ä½æˆ–è€…18ä½ï¼Œ15ä½æ—¶å…¨ä¸ºæ•°å­—ï¼Œ18ä½å‰17ä½ä¸ºæ•°å­—ï¼Œæœ€åä¸€ä½æ˜¯æ ¡éªŒä½ï¼Œå¯èƒ½ä¸ºæ•°å­—æˆ–å­—ç¬¦X  
+    //Éí·İÖ¤ºÅÂëÎª15Î»»òÕß18Î»£¬15Î»Ê±È«ÎªÊı×Ö£¬18Î»Ç°17Î»ÎªÊı×Ö£¬×îºóÒ»Î»ÊÇĞ£ÑéÎ»£¬¿ÉÄÜÎªÊı×Ö»ò×Ö·ûX  
     var reg = /(^\d{15}$)|(^\d{17}(\d|X)$)/;
     if (reg.test(card) === false) {
         return false;
@@ -997,7 +997,7 @@ function isCardNo(card) {
 }
 
 /**
- * å»æ‰å­—ç¬¦ä¸²é¦–å°¾ç©ºæ ¼
+ * È¥µô×Ö·û´®Ê×Î²¿Õ¸ñ
  * @param str
  * @returns
  */
@@ -1007,22 +1007,22 @@ function trim(str) {
 
 /**
  * WolfSoul
- * èº«ä»½è¯å·æ˜¯å¦åˆæ ¼çš„æ ¡éªŒæ–¹æ³•,å¼ºç±»å‹æ ¡éªŒ,æ…ç”¨å§...
+ * Éí·İÖ¤ºÅÊÇ·ñºÏ¸ñµÄĞ£Ñé·½·¨,Ç¿ÀàĞÍĞ£Ñé,É÷ÓÃ°É...
  * @param idNumber
  * @return
  */
 function checkIdNumber(idNumber) {
     idNumber = trim(idNumber);
-    var Errors = new Array("èº«ä»½è¯æ ¼å¼é”™è¯¯ï¼", "èº«ä»½è¯å·ç å‡ºç”Ÿæ—¥æœŸè¶…å‡ºèŒƒå›´æˆ–å«æœ‰éæ³•å­—ç¬¦!", "èº«ä»½è¯å·ç é”™è¯¯,æ‰€è¾“å…¥çš„èº«ä»½è¯å·ä¸ä¼šå¯¹åº”ä»»ä½•äºº!", "èº«ä»½è¯å·ä¸­æ‰€ç¤ºçš„åœ°åŒºä»£ç éæ³•!");
+    var Errors = new Array("Éí·İÖ¤¸ñÊ½´íÎó£¡", "Éí·İÖ¤ºÅÂë³öÉúÈÕÆÚ³¬³ö·¶Î§»òº¬ÓĞ·Ç·¨×Ö·û!", "Éí·İÖ¤ºÅÂë´íÎó,ËùÊäÈëµÄÉí·İÖ¤ºÅ²»»á¶ÔÓ¦ÈÎºÎÈË!", "Éí·İÖ¤ºÅÖĞËùÊ¾µÄµØÇø´úÂë·Ç·¨!");
 
-    //æ ¡éªŒé•¿åº¦ï¼Œç±»å‹ 
+    //Ğ£Ñé³¤¶È£¬ÀàĞÍ 
     if (isCardNo(idNumber) === false) {
         return Errors[0];
     } else {
         return "";
     }
-    /*   2015-09-09é™ˆæ¾æ—æå‡ºï¼Œèº«ä»½è¯å·å¼±æ ¡éªŒ
-    var area={11:"åŒ—äº¬",12:"å¤©æ´¥",13:"æ²³åŒ—",14:"å±±è¥¿",15:"å†…è’™å¤",21:"è¾½å®",22:"å‰æ—",23:"é»‘é¾™æ±Ÿ",31:"ä¸Šæµ·",32:"æ±Ÿè‹",33:"æµ™æ±Ÿ",34:"å®‰å¾½",35:"ç¦å»º",36:"æ±Ÿè¥¿",37:"å±±ä¸œ",41:"æ²³å—",42:"æ¹–åŒ—",43:"æ¹–å—",44:"å¹¿ä¸œ",45:"å¹¿è¥¿",46:"æµ·å—",50:"é‡åº†",51:"å››å·",52:"è´µå·",53:"äº‘å—",54:"è¥¿è—",61:"é™•è¥¿",62:"ç”˜è‚ƒ",63:"é’æµ·",64:"å®å¤",65:"æ–°ç–†",71:"å°æ¹¾",81:"é¦™æ¸¯",82:"æ¾³é—¨",91:"å›½å¤–"};  
+    /*   2015-09-09³ÂËÉÁÖÌá³ö£¬Éí·İÖ¤ºÅÈõĞ£Ñé
+    var area={11:"±±¾©",12:"Ìì½ò",13:"ºÓ±±",14:"É½Î÷",15:"ÄÚÃÉ¹Å",21:"ÁÉÄş",22:"¼ªÁÖ",23:"ºÚÁú½­",31:"ÉÏº£",32:"½­ËÕ",33:"Õã½­",34:"°²»Õ",35:"¸£½¨",36:"½­Î÷",37:"É½¶«",41:"ºÓÄÏ",42:"ºş±±",43:"ºşÄÏ",44:"¹ã¶«",45:"¹ãÎ÷",46:"º£ÄÏ",50:"ÖØÇì",51:"ËÄ´¨",52:"¹óÖİ",53:"ÔÆÄÏ",54:"Î÷²Ø",61:"ÉÂÎ÷",62:"¸ÊËà",63:"Çàº£",64:"ÄşÏÄ",65:"ĞÂ½®",71:"Ì¨Íå",81:"Ïã¸Û",82:"°ÄÃÅ",91:"¹úÍâ"};  
     var Y,JYM; 
     var S,M; 
     var idNumber_array = new Array(); 
@@ -1033,9 +1033,9 @@ function checkIdNumber(idNumber) {
     switch(idNumber.length){ 
         case 15: 
             if( (parseInt(idNumber.substr(6,2))+1900) % 4 == 0 || ((parseInt(idNumber.substr(6,2))+1900) % 100 == 0 && (parseInt(idNumber.substr(6,2))+1900) % 4 == 0 )){ 
-                ereg=/^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$/;//æµ‹è¯•å‡ºç”Ÿæ—¥æœŸçš„åˆæ³•æ€§ 
+                ereg=/^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$/;//²âÊÔ³öÉúÈÕÆÚµÄºÏ·¨ĞÔ 
             }else{ 
-                ereg=/^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$/;//æµ‹è¯•å‡ºç”Ÿæ—¥æœŸçš„åˆæ³•æ€§ 
+                ereg=/^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$/;//²âÊÔ³öÉúÈÕÆÚµÄºÏ·¨ĞÔ 
             } 
             
             if(ereg.test(idNumber)){
@@ -1047,9 +1047,9 @@ function checkIdNumber(idNumber) {
             
         case 18: 
             if ( parseInt(idNumber.substr(6,4)) % 4 == 0 || (parseInt(idNumber.substr(6,4)) % 100 == 0 && parseInt(idNumber.substr(6,4))%4 == 0 )){ 
-                ereg=/^[1-9][0-9]{5}[1-9][0-9][0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$/;//é—°å¹´å‡ºç”Ÿæ—¥æœŸçš„åˆæ³•æ€§æ­£åˆ™è¡¨è¾¾å¼ 
+                ereg=/^[1-9][0-9]{5}[1-9][0-9][0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$/;//ÈòÄê³öÉúÈÕÆÚµÄºÏ·¨ĞÔÕıÔò±í´ïÊ½ 
             }else{ 
-                ereg=/^[1-9][0-9]{5}[1-9][0-9][0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$/;//å¹³å¹´å‡ºç”Ÿæ—¥æœŸçš„åˆæ³•æ€§æ­£åˆ™è¡¨è¾¾å¼ 
+                ereg=/^[1-9][0-9]{5}[1-9][0-9][0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$/;//Æ½Äê³öÉúÈÕÆÚµÄºÏ·¨ĞÔÕıÔò±í´ïÊ½ 
             } 
             if(ereg.test(idNumber)){
                 S = (parseInt(idNumber_array[0]) 		 + parseInt(idNumber_array[10])) * 7 	

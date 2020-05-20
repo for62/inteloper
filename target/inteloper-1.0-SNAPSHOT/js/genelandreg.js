@@ -2,13 +2,13 @@ alert("gene");
 
 function addRow(tableId) {
     var testTbl = $("#" + tableId);
-    //æ·»åŠ ä¸€è¡Œ
+    //Ìí¼ÓÒ»ĞĞ
     var newTr = testTbl.insertRow();
-    //æ·»åŠ ä¸¤åˆ—
+    //Ìí¼ÓÁ½ÁĞ
     var newTd0 = newTr.insertCell();
     var newTd1 = newTr.insertCell();
-    //è®¾ç½®åˆ—å†…å®¹å’Œå±æ€§
+    //ÉèÖÃÁĞÄÚÈİºÍÊôĞÔ
     newTd0.innerHTML = '<input type=checkbox id="box4">';
 
-    newTd2.innerText = 'æ–°åŠ è¡Œ';
+    newTd2.innerText = 'ĞÂ¼ÓĞĞ';
 }

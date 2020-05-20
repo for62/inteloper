@@ -1,9 +1,9 @@
 /***
- * æ ‡é¢˜ï¼šå›¾ç‰‡æ»šåŠ¨æ’ä»¶
- * ç¼–å†™æ—¶é—´ï¼š2015å¹´3æœˆ18å·
- * ä½œè€…ï¼šæ–¯è¿ˆæ¬§
- * é‚®ç®±ï¼šhhloyyhhl@qq.com
- * å·¥ä½œå®¤ç½‘ç«™ï¼šhttp://www.agevisual.com/
+ * ±êÌâ£ºÍ¼Æ¬¹ö¶¯²å¼ş
+ * ±àĞ´Ê±¼ä£º2015Äê3ÔÂ18ºÅ
+ * ×÷Õß£ºË¹ÂõÅ·
+ * ÓÊÏä£ºhhloyyhhl@qq.com
+ * ¹¤×÷ÊÒÍøÕ¾£ºhttp://www.agevisual.com/
  * version:jquery.ScrollPic.1.0
  ***/
 $(function () {
@@ -41,7 +41,7 @@ $(function () {
                     index = 0;
                 }
                 showPics(index);
-            }//è‡ªåŠ¨åˆ‡æ¢å‡½æ•°
+            }//×Ô¶¯ÇĞ»»º¯Êı
 
             //if (opts.autoscrooll) { var time = setInterval(picTimer, opts.Time) } else { $(".yiz-page-btn").hide() }
             $(".yiz-page-btn").hide();
@@ -50,7 +50,7 @@ $(function () {
                 var nowLeft = -index * pWidth;
                 PicObject.find(scrollList).stop(true, false).animate({"left": nowLeft}, opts.speed);
                 //PicObject.find(paging).eq(index).addClass('current').siblings().removeClass('current');
-            }//åŠ¨ç”»å‡½æ•°
+            }//¶¯»­º¯Êı
 
 
             /*
@@ -65,7 +65,7 @@ $(function () {
                    e.preventDefault()
                    index = PicObject.find(paging).index($(this));
                    showPics(index)
-                });//é¼ æ ‡ç»è¿‡1ã€2ã€3ã€4çš„æ•ˆæœ
+                });//Êó±ê¾­¹ı1¡¢2¡¢3¡¢4µÄĞ§¹û
             }
             */
 
@@ -80,7 +80,7 @@ $(function () {
                         index = len - 1;
                     }
                     showPics(index);
-                });//ä¸Šä¸€é¡µ
+                });//ÉÏÒ»Ò³
 
                 next.on('click', function (e) {
                     e.preventDefault()
@@ -89,7 +89,7 @@ $(function () {
                         index = 0;
                     }
                     showPics(index);
-                });//ä¸‹ä¸€é¡µ
+                });//ÏÂÒ»Ò³
 
 
             }
@@ -100,12 +100,12 @@ $(function () {
                 //if (opts.autoscrooll) { time = setInterval(picTimer, opts.Time); } else { clearInterval(time); PicObject.find('$(".yiz-page-btn")').hide() }
                 clearInterval(time);
                 //PicObject.find('$(".yiz-page-btn")').hide();
-            });//æ¸…é™¤è®¡æ—¶å™¨
+            });//Çå³ı¼ÆÊ±Æ÷
 
             //phone
 
 
-            //æ”¯æŒæ‰‹åŠ¿äº‹ä»¶
+            //Ö§³ÖÊÖÊÆÊÂ¼ş
             function isTouchDevice() {
                 try {  //phone
                     document.createEvent("TouchEvent");

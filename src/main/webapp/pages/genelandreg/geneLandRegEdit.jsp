@@ -39,7 +39,7 @@
         <!-- 联系方式 -->
         <input type="hidden" name="contractorTelTmp" id="contractorTelTmp" value="">
 
-        <input type="hidden" id="applyBatchNo" name="applyBatchNo" value="PT20170521000003"/>
+        <input type="hidden" id="applyBatchNo" name="applyBatchNo" value="${ptNumber}"/>
         <input type="hidden" name="townCode" value="1">
         <input type="hidden" name="countryCode" value="2">
         <input type="hidden" name="groupName" value="3">

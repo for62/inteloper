@@ -4,8 +4,10 @@ import com.oracle.intelagr.entity.Peasant;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface PeasantMapper {
 
-    public Peasant selectByContractorID(@Param("contractorIDType")String contractorIDType,@Param("contractorID")String contractorID);
+    public List<Peasant> selectByContractorID(@Param("contractorIDType")String contractorIDType, @Param("contractorID")String contractorID);
 }

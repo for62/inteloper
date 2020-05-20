@@ -53,13 +53,13 @@ public class RoleServiceImpl implements IRoleService {
     }
 
     @Override
-    public void delete(int[] ids) {
-
+    public void delete(Integer id) {
+        roleMapper.delete(id);
     }
 
     @Override
     public void update(Role role) {
-
+        roleMapper.update(role);
     }
 
     /**

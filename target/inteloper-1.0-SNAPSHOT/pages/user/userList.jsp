@@ -29,7 +29,7 @@
                         <input name="userID" value="${data.userID }" class="easyui-textbox"
                                style="width:200px;height:25px;">
                         <input type='hidden' id="pageTotal" name="total" value="${pageModel.total }"/>
-                        <input type="hidden" id="page" name="pageNum" value="${pageModel.pageNum }">
+                        <input type="hidden" id="page" name="page" value="${pageModel.pageNum }">
                         <input type="hidden" id="pageSize" name="pageSize" value="${pageModel.pageSize }">
                     </td>
                     <td class="table_common_td_label_query_style">用户姓名：</td>
@@ -145,7 +145,7 @@
             height: winHeight - queryBlockHeight - toolBlock - 45,
             pagination: true,
             rownumbers: true,
-            fitColumns: true,
+            fitColumns: false,
             //fit: true,
             pageList: [5, 10, 15],
             pagePosition: "top"
@@ -245,7 +245,7 @@
             height: 290,
             closed: false,
             cache: false,
-            href: '${pageContext.request.contextPath}/user/detail.do?userID=' + rows[0].userID,
+            href: '${pageContext.request.contextPath}/user/detail.do?userID=' + rows[0].userId,
             modal: true
         });
     }

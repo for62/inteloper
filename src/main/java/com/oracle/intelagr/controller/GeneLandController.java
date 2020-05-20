@@ -3,18 +3,24 @@ package com.oracle.intelagr.controller;
 import com.mysql.jdbc.UpdatableResultSet;
 import com.oracle.intelagr.common.Constants;
 import com.oracle.intelagr.common.JsonResult;
+import com.oracle.intelagr.entity.GeneLandReg;
 import com.oracle.intelagr.entity.Peasant;
+import com.oracle.intelagr.entity.User;
 import com.oracle.intelagr.service.IGeneLandService;
 import com.oracle.intelagr.service.IServialNumService;
 import com.oracle.intelagr.task.UpdateServialNumTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 @Controller
 @RequestMapping("/geneLandReg")
 public class GeneLandController {
@@ -24,6 +30,7 @@ public class GeneLandController {
     @Autowired
     IGeneLandService iGeneLandService;
 
+    Logger logger = Logger.getLogger(GeneLandController.class);
     /**
      * 处理定时任务
      *
@@ -61,13 +68,40 @@ public class GeneLandController {
     @RequestMapping("/getContractorInfo.do")
     @ResponseBody
     public JsonResult getContractorInfo(String contractorIDType,String contractorID,Integer year) {
-        Peasant peasant = iGeneLandService.selectPeasantByContractorID(contractorIDType,contractorID);
+        logger.debug("contractorIDType----------"+contractorIDType);
+        List<Peasant> peasant = iGeneLandService.selectPeasantByContractorID(contractorIDType,contractorID,year);
         if (peasant == null){
             new JsonResult(false,"查无此人~");
         }
         JsonResult jsonResult = new JsonResult(true);
-        jsonResult.setData(peasant);
+        for (Peasant peasant1 : peasant) {
+            jsonResult.setData(peasant1);
+        }
         return jsonResult;
+    }
+
+    /**
+     * 保存
+     * @return
+     */
+    @RequestMapping("/save.do")
+    @ResponseBody
+    public JsonResult save(@RequestBody GeneLandReg geneLandReg, HttpSession session) {
+        User loginUser = (User)session.getAttribute("loginUser");
+        geneLandReg.setCreateDate(new Date());
+        geneLandReg.setUpdateDate(new Date());
+        geneLandReg.setCreateUserId(loginUser.getUserID());
+        geneLandReg.setUpdateUserId(loginUser.getUserID());
+        iGeneLandService.save(geneLandReg);
+        return new JsonResult(true);
+    }
+
+    /**
+     * 修改信息
+     */
+    @RequestMapping("/editInput.do")
+    public String editInput(){
+        return null;
     }
 
 }

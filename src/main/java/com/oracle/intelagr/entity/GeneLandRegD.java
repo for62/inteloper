@@ -15,6 +15,7 @@ public class GeneLandRegD extends BaseEntity {
     private String contractorID;
     //承包方姓名
     private String contractorName;
+
     //承包方联系方式
     private String contractorTel;
     //所在市编码 默认为五常市

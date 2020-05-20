@@ -91,4 +91,5 @@ public class Function extends BaseEntity {
     public void setFunctionIcon(String functionIcon) {
         this.functionIcon = functionIcon;
     }
+
 }

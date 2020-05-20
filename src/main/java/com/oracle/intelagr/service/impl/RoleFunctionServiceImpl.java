@@ -30,6 +30,7 @@ public class RoleFunctionServiceImpl implements IRoleFunctionService {
      */
     @Override
     public List<TreeModel> selectFunctions(String roleCode) {
+        // 查询出所有的角色
         List<Map<String, String>> list = roleFunctionMapper.selectFunctions(roleCode);
         /**
          * 将Map转成TreeModel
@@ -41,7 +42,7 @@ public class RoleFunctionServiceImpl implements IRoleFunctionService {
         Map<String, TreeModel> map = new LinkedHashMap<String, TreeModel>();
         for (Map<String, String> m : list) {
             // 一级节点
-            if (map.containsKey(m.get("ModuleCode"))) {
+            if (!map.containsKey(m.get("ModuleCode"))) {
                 TreeModel treeModel = new TreeModel();
                 treeModel.setId(m.get("ModuleCode"));
                 treeModel.setText(m.get("ModuleName"));
@@ -55,7 +56,13 @@ public class RoleFunctionServiceImpl implements IRoleFunctionService {
             if (m.get("checked") != null) {
                 treeModel.setChecked("checked");
             }
-            map.get(m.get("ModuleCode")).getChildren().add(treeModel);
+            System.out.println("m.get(\"ModuleCode\")-------"+m.get("ModuleCode"));
+//            try {
+                map.get(m.get("ModuleCode")).getChildren().add(treeModel);
+
+//            } catch (Exception e){
+//                System.out.println(e.getMessage());
+//            }
 
         }
         treeList.addAll(map.values());
@@ -72,6 +79,7 @@ public class RoleFunctionServiceImpl implements IRoleFunctionService {
     public void updateAuth(Role role) {
         // 1. 删除所有
         roleFunctionMapper.deleteRoleCode(role.getRoleCode());
+        System.out.println("删除成功了没？");
         // 2. 插入所有
         for(Function f:role.getFunctions()){
             if (f.getFunctionCode().length()>6){ // 只插入二级节点
@@ -82,8 +90,10 @@ public class RoleFunctionServiceImpl implements IRoleFunctionService {
                 roleFunction.setUpdateDate(new Date());
                 roleFunction.setRoleCode(role.getRoleCode());
                 roleFunction.setFunctionCode(f.getFunctionCode());
+                System.out.println("插入成功了没abc？");
                 roleFunctionMapper.insert(roleFunction);
             }
         }
+        System.out.println("插入成功了没？");
     }
 }

@@ -1,5 +1,6 @@
 package com.oracle.intelagr.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.oracle.intelagr.entity.Function;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
+
+import static com.github.pagehelper.page.PageMethod.startPage;
 
 @Service
 public class UserServiceImpl implements IUserService {

@@ -46,6 +46,7 @@
                 <tr>
                     <td class="table_common_td_label_style">证件类型：</td>
                     <td class="table_common_td_txt_style editableFalse">
+                        <!-- 遍历出查询到的证件类型 -->
                         <s:select id="iDType" name="iDType" entityName="commondata" hasPleaseSelectOption="true" codeKey="IDType"></s:select>
                         <span class="span_common_mustinput_style">*</span>
                     </td>
@@ -394,9 +395,9 @@
         var idType = $("#idType").combobox('getValue');
         showLoading();
         lastQcIdNumber = contractorId;
-        Public.ajaxGet('../api/getContratorInfo?contratorId=' + contractorId + "&contractorIDType=" + idType + "&year=${year}", {}, function (e) {
+        Public.ajaxGet('${pageContext.request.contextPath}/geneLandReg/getContractorInfo.do?contratorId=' + contractorId + "&contractorIDType=" + idType + "&year=${year}", {}, function (e) {
             hideLoading();
-            if (0 == e.status) {
+            if (200 == e.status) {
                 clearDatasTable();
                 initInterfaceInfo(e.data);
             } else {
@@ -435,7 +436,7 @@
     //初始化信息
     function initInterfaceInfo(data) {
         //基本信息
-        var contratorInfo = data.peasant;
+        var contratorInfo = data;
         //承包方类型
         $("#contractorType").combobox('setValue', contratorInfo.contractorType);
         //承包方
@@ -457,16 +458,16 @@
         alert(contratorInfo.groupName);
         //屯
         $("#tmp_groupName").textbox('setValue', contratorInfo.groupName);
-        //初始化总面积、已备案、可备案面积
-        //总面积
-        $("#zmj").textbox('setValue', numberDecimalDigits(data.zmj, 2));
-        //已备案面积
-        $("#ybamj").textbox('setValue', numberDecimalDigits(data.yba, 2));
-        //可备案面积
-        $("#kbamj").textbox('setValue', numberDecimalDigits(data.kba, 2));
+        // //初始化总面积、已备案、可备案面积
+        // //总面积
+        // $("#zmj").textbox('setValue', numberDecimalDigits(data.zmj, 2));
+        // //已备案面积
+        // $("#ybamj").textbox('setValue', numberDecimalDigits(data.yba, 2));
+        // //可备案面积
+        // $("#kbamj").textbox('setValue', numberDecimalDigits(data.kba, 2));
 
         //土地列表信息
-        var landInfo = data.contract;
+        var landInfo = data.contractList;
         //alert(data.contract.length);
         for (var contract in landInfo) {
             //类型

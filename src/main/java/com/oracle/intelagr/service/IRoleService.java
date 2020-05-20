@@ -30,7 +30,7 @@ public interface IRoleService {
 
     public Role queryById(int id);
 
-    public void delete(int[] ids);
+    public void delete(Integer id);
 
     public void update(Role role);
 

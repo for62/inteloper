@@ -45,6 +45,9 @@
 		select * from m_role
 		where id = #{id} and deleteFlag='N'
 	</select>
+    <update id="delete" parameterType="int">
+        update m_role set deleteFlag = 'Y' where id=#{id}
+    </update>
     <insert id="insert" parameterType="Role">
 		insert into m_role
 		values (default,#{roleCode},#{roleName},#{remark},'N',#{createUserId},#{createDate},#{updateUserId},#{updateDate})
@@ -52,7 +55,7 @@
     <update id="update" parameterType="Role">
         update m_role
         <set>
-            <if test="roleCode!=null and uroleCode!=''">
+            <if test="roleCode!=null and roleCode!=''">
                 roleCode=#{roleCode},
             </if>
             <if test="roleName!=null and roleName!=''">

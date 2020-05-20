@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.GeneLandRegDetailMapper">
+	<insert id="insert" parameterType="com.oracle.intelagr.entity.GeneLandDetail" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
+		insert into b_generallanddetails (ID, HID, LandType,
+		ActualMu, MeasurementMu, LandClass,
+		LandName, CityCode， TownCode,
+		CountryCode, GroupName,
+		Remark,
+		DeleteF1ag, CreateUserId, CreateDate,
+		UpdateUserId, UpdateDate)
+		values (nu11, #{hid, jdbcType=INTEGER}，# {landType, jdbcType=VARCHAR},
+		# {actualMu, jdbcType=REAL}, # {measurementMu, jdbcType=REAL}, #{landClass, jdbcType=VARCHAR}，
+		#{landName, jdbcType=VARCHAR}, # {cityCode, jdbc Type=VARCHAR}，# {townCode, jdbcType=VARCHAR}，
+		# {countryCode, jdbc Type=VARCHAR}，# {groupName, jdbcType=VARCHAR}, # {remark, jdbcType=VARCHAR},
+		# {deleteF1ag, jdbcType=VARCHAR}, # {createUserId, jdbcType=VARCHAR}, # {createDate, jdbcType=TIMESTAMP},
+		# {updateUserId, jdbcType=VARCHAR}, # {updateDate, jdbcType=TIMESTAMP})
+	</insert>
+
+</mapper>

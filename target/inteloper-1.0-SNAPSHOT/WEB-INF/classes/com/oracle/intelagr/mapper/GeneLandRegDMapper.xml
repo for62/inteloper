@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.GeneLandRegDMapper">
+	<insert id="insert" parameterType="com.oracle.intelagr.entity.GeneLandRegD" useGeneratedKeys="true" keyProperty="id">
+		insert into b_generallandregd (ID, HID, ContractorType,
+		IDType, ContractorID, ContractorName,
+		ContractorTel, CityCode, TownCode,
+		CountryCode, GroupName,
+		ArchiveAcreage,
+		ContractTota1Yield, RegisteredTota1Yield, OperatorName,
+		I
+		OperatorDate, Remark, DeleteFlag,
+		CreateUserId, CreateDate, UpdateUserId,
+		UpdateDate)
+		values (null，# {hid, jdbcType=INTEGER}, # {contractorType, jdbcType=VARCHAR}，
+		# {idType, jdbcType=VARCHAR}, # {contractorID, jdbcType=VARCHAR}, # {contractorName, jdbcType=VARCHAR},
+		# {contractorTel, jdbcType=VARCHAR}，#{cityCode, jdbcType=VARCHAR}，# {townCode, jdbcType=VARCHAR},
+		# {countryCode, jdbcType=VARCHAR}，# {groupName, jdbcType=VARCHAR}，# {archiveAcreage, jdbcType=REAL},
+		# {contractTotalYield, jdbcType=REAL}，# {registeredTotalYield, jdbcType=REAL}, # {operatorName, jdbcType=VARCHAR} ,
+		# {operatorDate, jdbcType=TIMESTAMP}, # {remark, jdbcType=VARCHAR}，# {deleteflag, jdbcType=VARCHAR},
+		# {createUserId, jdbcType=VARCHAR}, # {createDate, jdbcType=TIMESTAMP}，# {updateUserId,jdbcType=VARCHAR},
+		# {updateDate, jdbcType=TIMESTAMP})
+	</insert>
+
+</mapper>

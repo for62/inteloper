@@ -56,6 +56,7 @@
 </div>
 <script type="text/javascript">
     function addForm_check() {
+        $('#addDialog').window('close');
         var roleCode = $.trim($("#roleCode").val());
         var roleName = $.trim($("#roleName").val());
 
@@ -68,7 +69,7 @@
             return false;
         }
         var a = $('#addroleform').toObject();
-        showLoading();
+        // showLoading();
         $.ajax({
             url: "${pageContext.request.contextPath}/role/save.do",
             type: "post",
@@ -77,7 +78,6 @@
                 hideLoading();
                 if (200 == e.status) {
                     $.messager.alert('提示', '操作成功。', 'info');
-                    $('#addDialog').window('close');
                     $('#roleform').submit();
                 } else {
                     parent.parent.Public.tips({

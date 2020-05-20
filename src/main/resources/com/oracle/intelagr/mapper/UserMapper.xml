@@ -75,7 +75,7 @@
                 and userID = #{userID}
             </if>
             <if test="password!=null and password!=''">
-                and password = #{password}
+                and password = md5(#{password})
             </if>
             <if test="userName!=null and userName!=''">
                 and userName = #{userName}
@@ -97,7 +97,7 @@
                 userID=#{userID},
             </if>
             <if test="password!=null and password!=''">
-                password=#{password},
+                password=md5(#{password}),
             </if>
             <if test="userName!=null and userName!=''">
                 userName=#{userName},

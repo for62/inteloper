@@ -19,7 +19,7 @@
 <body class="easyui-layout">
 <div region="center" border="false" style="padding:5px;">
     <fieldset id="queryBlock" class="fieldset_common_style">
-        <form id="roleform" name="roleform" method="post" action="${pageContext.request.contextPath}/role/list">
+        <form id="roleform" name="roleform" method="post" action="${pageContext.request.contextPath}/role/list.do">
             <table class="table_common_style">
                 <tr>
                     <td class="table_common_td_label_query_style">角色编号：</td>
@@ -168,7 +168,7 @@
             height: 260,
             closed: false,
             cache: false,
-            href: '${pageContext.request.contextPath}/role/editRoleInit?id=' + id,
+            href: '${pageContext.request.contextPath}/role/editRoleInit.do?id=' + id,
             modal: true
         });
     }
@@ -197,11 +197,11 @@
     }
 
     function deleteRole() {
-        var ids = [];
         var rows = $('#data').datagrid('getSelections');
         var length = rows.length;
-        for (var i = 0; i < rows.length; i++) ids.push(rows[i].id);
-        if (ids.length == 0) {
+        var id = rows[0].id;
+        alert(id);
+        if (rows.length == 0) {
             $.messager.alert('警告', '至少选择一个角色。', 'warning');
             return false;
         }
@@ -209,11 +209,11 @@
             $.messager.alert('警告', '系统管理组不能删除。', 'warning');
             return false;
         }
-
+        // alert(ids);
         $.messager.confirm("确认", "您确认删除选定的记录吗？", function (deleteAction) {
             if (deleteAction) {
-                showLoading();
-                Public.ajaxGet('delete', {ids: ids}, function (e) {
+                // showLoading();
+                Public.ajaxGet('delete.do', {id: id}, function (e) {
                     hideLoading();
                     if (200 == e.status) {
                         $.messager.alert('提示', '操作成功。', 'info');

@@ -14,6 +14,8 @@ public interface RoleMapper {
 
     public Role selectById(int id);
 
+    public void delete(Integer id);
+
     public void insert(Role role);
 
     public void update(Role role);

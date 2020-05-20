@@ -1,11 +1,11 @@
 /**
  *
- * @param bizType  æ ‡è¯†
- * @param title    åˆ—è¡¨æ˜¾ç¤ºæ—¶çš„å¤´åç§°
+ * @param bizType  ±êÊ¶
+ * @param title    ÁĞ±íÏÔÊ¾Ê±µÄÍ·Ãû³Æ
  */
 function showUploadDialog(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner) {
     $('#uploadDialog').dialog({
-        title: 'æ–‡ä»¶ä¸Šä¼ ',
+        title: 'ÎÄ¼şÉÏ´«',
         width: 540,
         height: 400,
         closed: false,
@@ -25,29 +25,29 @@ function showFileList(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, d
         dataType: 'text',
         contentType: 'text/html',
         error: function (result) {
-            alert('è·å¾—æ–‡ä»¶åˆ—è¡¨å¤±è´¥');
+            alert('»ñµÃÎÄ¼şÁĞ±íÊ§°Ü');
         },
         async: true,
         success: function (result) {
             $('#imgList').datagrid('loadData', {total: 0, rows: []});
             var obj = JSON.parse(result);
             //var html = '<table class="t1" width="100%" height="30px;" style="margin-top:10px;table-layout:fixed;border-collapse:collapse;">';
-            //html += '<tr height="30px;"><td align="center">'+ title +'</td><td align="center">æ–‡ä»¶è¯´æ˜</td><td align="center">æ“ä½œ</td></tr>';  //å›æ˜¾å­—ç¬¦ä¸²
+            //html += '<tr height="30px;"><td align="center">'+ title +'</td><td align="center">ÎÄ¼şËµÃ÷</td><td align="center">²Ù×÷</td></tr>';  //»ØÏÔ×Ö·û´®
 
-            //é¢„è§ˆæ•°ç»„
+            //Ô¤ÀÀÊı×é
             var imgPathArray = new Array();
             var imgDescArray = new Array();
             var i = 0;
-            //è§†é¢‘ä¿¡æ¯
+            //ÊÓÆµĞÅÏ¢
             var videoArray = new Array();
             var j = 0;
             for (var k in obj.data) {
                 var mfile = obj.data[k];
                 if (mfile.fileType == "01" || mfile.fileType == "") {
-                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>åˆ é™¤</a>";
+                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>É¾³ı</a>";
                     //html += "<tr height='30px;'><td>" + mfile.originalName + "</td>";
                     //html += "<td>" + mfile.fileInfo + "</td>";
-                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>åˆ é™¤</a></td></tr>";
+                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>É¾³ı</a></td></tr>";
                     $('#imgList').datagrid('appendRow', {
                         originalName: mfile.originalName,
                         fileInfo: mfile.fileInfo,
@@ -55,7 +55,7 @@ function showFileList(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, d
                     });
                     //html += "<tr height='30px;'><td>" + mfile.originalName + "</td>";
                     //html += "<td>" + mfile.fileInfo + "</td>";
-                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this)'>åˆ é™¤</a></td></tr>";
+                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this)'>É¾³ı</a></td></tr>";
 
                     var fileID = mfile.id;
                     if (fileID == 0 || fileID < 1) {
@@ -75,7 +75,7 @@ function showFileList(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, d
             if (imgPathArray.length >= 0) {
                 reloadImageView(viewDivIdOuter, viewDivIdInner, imgPathArray, imgDescArray, 450, 500);
             }
-            //æ˜¾ç¤ºè§†é¢‘ä¿¡æ¯
+            //ÏÔÊ¾ÊÓÆµĞÅÏ¢
             if (videoArray.length > 0) {
                 try {
                     showVideoList(videoArray, divCode);
@@ -98,19 +98,19 @@ function showFileListView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInne
         dataType: 'text',
         contentType: 'text/html',
         error: function (result) {
-            alert('è·å¾—æ–‡ä»¶åˆ—è¡¨å¤±è´¥');
+            alert('»ñµÃÎÄ¼şÁĞ±íÊ§°Ü');
         },
         async: true,
         success: function (result) {
             var obj = JSON.parse(result);
             var html = '<table class="t1" width="100%" height="30px;" style="margin-top:10px;table-layout:fixed;border-collapse:collapse;">';
-            html += '<tr height="30px;"><td align="center">' + title + '</td><td align="center">æ–‡ä»¶è¯´æ˜</td></tr>';  //å›æ˜¾å­—ç¬¦ä¸²
+            html += '<tr height="30px;"><td align="center">' + title + '</td><td align="center">ÎÄ¼şËµÃ÷</td></tr>';  //»ØÏÔ×Ö·û´®
 
-            //é¢„è§ˆæ•°ç»„
+            //Ô¤ÀÀÊı×é
             var imgPathArray = new Array();
             var imgDescArray = new Array();
             var i = 0;
-            //è§†é¢‘ä¿¡æ¯
+            //ÊÓÆµĞÅÏ¢
             var videoArray = new Array();
             var j = 0;
             for (var k in obj.data) {
@@ -138,7 +138,7 @@ function showFileListView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInne
             if (imgPathArray.length > 0) {
                 reloadImageView(viewDivIdOuter, viewDivIdInner, imgPathArray, imgDescArray, 450, 500);
             }
-            //æ˜¾ç¤ºè§†é¢‘ä¿¡æ¯
+            //ÏÔÊ¾ÊÓÆµĞÅÏ¢
             if (videoArray.length > 0) {
                 try {
                     showVideoList(videoArray, divCode);
@@ -149,7 +149,7 @@ function showFileListView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInne
     });
 }
 
-//åˆ é™¤åè°ƒç”¨çš„æ–¹æ³•
+//É¾³ıºóµ÷ÓÃµÄ·½·¨
 function showImageView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, divCode) {
     $.ajax({
         url: root + "/file/fileList?bizType=" + bizType + "&bizCode=" + bizCode,
@@ -157,19 +157,19 @@ function showImageView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, 
         dataType: 'text',
         contentType: 'text/html',
         error: function (result) {
-            alert('è·å¾—æ–‡ä»¶åˆ—è¡¨å¤±è´¥');
+            alert('»ñµÃÎÄ¼şÁĞ±íÊ§°Ü');
         },
         async: true,
         success: function (result) {
             var obj = JSON.parse(result);
             var html = '<table class="t1" width="100%" height="30px;" style="margin-top:10px;table-layout:fixed;border-collapse:collapse;">';
-            html += '<tr height="30px;"><td align="center">' + title + '</td><td align="center">æ–‡ä»¶è¯´æ˜</td><td align="center">æ“ä½œ</td></tr>';  //å›æ˜¾å­—ç¬¦ä¸²
+            html += '<tr height="30px;"><td align="center">' + title + '</td><td align="center">ÎÄ¼şËµÃ÷</td><td align="center">²Ù×÷</td></tr>';  //»ØÏÔ×Ö·û´®
 
-            //é¢„è§ˆæ•°ç»„
+            //Ô¤ÀÀÊı×é
             var imgPathArray = new Array();
             var imgDescArray = new Array();
             var i = 0;
-            //è§†é¢‘ä¿¡æ¯
+            //ÊÓÆµĞÅÏ¢
             var videoArray = new Array();
             var j = 0;
             for (var k in obj.data) {
@@ -177,11 +177,11 @@ function showImageView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, 
                 if (mfile.fileType == "01" || mfile.fileType == "") {
                     //html += "<tr height='30px;'><td>" + mfile.originalName + "</td>";
                     //html += "<td>" + mfile.fileInfo + "</td>";
-                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this)'>åˆ é™¤</a></td></tr>";
-                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>åˆ é™¤</a>";
+                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this)'>É¾³ı</a></td></tr>";
+                    var opHtml = "<a href='javascript:void(0);return false;' onclick='delUploadFile(\"" + bizType + "\",\"" + mfile.bizCode + "\",\"" + mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>É¾³ı</a>";
                     //html += "<tr height='30px;'><td>" + mfile.originalName + "</td>";
                     //html += "<td>" + mfile.fileInfo + "</td>";
-                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>åˆ é™¤</a></td></tr>";
+                    //html += "<td align='center'><a href='javascript:void(0);return false;' onclick='delFile(\"" + bizType + "\",\""+ mfile.bizCode+ "\",\"" +  mfile.filePath + "\", this, \"" + viewDivIdOuter + "\", \"" + viewDivIdInner + "\")'>É¾³ı</a></td></tr>";
                     $('#imgList').datagrid('appendRow', {
                         originalName: mfile.originalName,
                         fileInfo: mfile.fileInfo,
@@ -206,7 +206,7 @@ function showImageView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, 
             if (imgPathArray.length >= 0) {
                 reloadImageView(viewDivIdOuter, viewDivIdInner, imgPathArray, imgDescArray, 450, 500);
             }
-            //æ˜¾ç¤ºè§†é¢‘ä¿¡æ¯
+            //ÏÔÊ¾ÊÓÆµĞÅÏ¢
             if (videoArray.length > 0) {
                 try {
                     showVideoList(videoArray, divCode);
@@ -222,12 +222,12 @@ function showImageView(bizType, bizCode, title, viewDivIdOuter, viewDivIdInner, 
     });
 }
 
-//bizCodeå¦‚æœæ²¡æœ‰å°±ä¼ ç©ºä¸²
+//bizCodeÈç¹ûÃ»ÓĞ¾Í´«¿Õ´®
 function delUploadFile(bizType, bizCode, filePath, obj, viewDivIdOuter, viewDivIdInner) {
-    //if(!confirm("æ‚¨ç¡®å®šè¦åˆ é™¤å—ï¼Ÿ")) return false;
+    //if(!confirm("ÄúÈ·¶¨ÒªÉ¾³ıÂğ£¿")) return false;
     //alert( obj.parentNode.parentNode.nodeName );
-    //bizCode ä¸ºç©ºæ—¶ï¼Œä¼ ç©ºä¸²
-    $.messager.confirm("ç¡®è®¤", "æ‚¨ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ", function (deleteAction) {
+    //bizCode Îª¿ÕÊ±£¬´«¿Õ´®
+    $.messager.confirm("È·ÈÏ", "ÄúÈ·ÈÏÒªÉ¾³ıÂğ£¿", function (deleteAction) {
         if (!deleteAction) {
             return false;
         }
@@ -238,8 +238,8 @@ function delUploadFile(bizType, bizCode, filePath, obj, viewDivIdOuter, viewDivI
             },
             function (e) {
                 if (200 == e.status) {
-                    //é‡æ–°æ›´æ–°æœ¬åœ°åˆ—è¡¨
-                    $.messager.alert('æç¤º', 'åˆ é™¤æˆåŠŸã€‚', 'info');
+                    //ÖØĞÂ¸üĞÂ±¾µØÁĞ±í
+                    $.messager.alert('ÌáÊ¾', 'É¾³ı³É¹¦¡£', 'info');
                     //var _obj = obj.parentNode.parentNode.parentNode;
                     //var tbody = _obj.parentNode;
                     //tbody.removeChild( _obj );
@@ -251,7 +251,7 @@ function delUploadFile(bizType, bizCode, filePath, obj, viewDivIdOuter, viewDivI
                     //return;
                     showFileList(bizType, bizCode, "", viewDivIdOuter, viewDivIdInner);
                 } else {
-                    $.messager.alert('æç¤º', 'åˆ é™¤å¤±è´¥ã€‚' + e.msg, 'info');
+                    $.messager.alert('ÌáÊ¾', 'É¾³ıÊ§°Ü¡£' + e.msg, 'info');
                 }
             });
     });
